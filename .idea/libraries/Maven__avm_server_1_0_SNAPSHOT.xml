@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: avm:server:1.0-SNAPSHOT">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/server/server-1.0-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/avm/server/1.0-SNAPSHOT/server-1.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/server/server-1.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/avm/server/1.0-SNAPSHOT/server-1.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

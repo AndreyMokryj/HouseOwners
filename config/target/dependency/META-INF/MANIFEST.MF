@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.6.1
+Built-By: andrew
+Build-Jdk: 11.0.1
+Implementation-Title: config
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: avm
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/eureka/config
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: config.ConfigApplication
+Spring-Boot-Version: 2.0.5.RELEASE
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+

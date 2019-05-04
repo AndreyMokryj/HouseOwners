@@ -1,0 +1,11 @@
+POST http://127.0.0.1:8761/actuator/bus-refresh
+
+###
+
+GET http://127.0.0.1:8761/actuator/health
+Accept: application/vnd.spring-boot.actuator.v2+json
+
+<> 2019-04-11T070922.200.json
+
+###
+

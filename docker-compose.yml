@@ -1,0 +1,52 @@
+version: '3.4'
+
+services:
+  config:
+    image: config
+    build:
+      context: ./config
+    volumes:
+      - /Users/andrew/application-config2:/configFile
+    networks:
+      - laba
+    ports:
+      - 5555:5555
+
+  discovery:
+    entrypoint: ["/bin/sh", "-c", "(until [[ \"$$(getent hosts config)\" ]]; do echo \"awaits for config\"; sleep 2; done;) && wait4ports tcp://$$(getent hosts rabbit | awk '{ print $$1 }'):5672 tcp://$$(getent hosts config | awk '{ print $$1 }'):5555 && java -jar discovery.jar --spring.profiles.active=docker"]
+    image: discovery
+    build:
+      context: ./discovery
+    networks:
+      - laba
+
+  server:
+    entrypoint: ["/bin/sh", "-c", "(until [[ \"$$(getent hosts config)\" ]]; do echo \"awaits for config\"; sleep 2; done;) && (until [[ \"$$(getent hosts discovery)\" ]]; do echo \"awaits for discovery\"; sleep 2; done;) && wait4ports tcp://$$(getent hosts rabbit | awk '{ print $$1 }'):5672 tcp://$$(getent hosts config | awk '{ print $$1 }'):5555 tcp://$$(getent hosts discovery | awk '{ print $$1 }'):8761 && java -jar server.jar --spring.profiles.active=docker"]
+    image: server
+    build:
+      context: ./server
+    networks:
+      - laba
+
+  client:
+    entrypoint: ["/bin/sh", "-c", "(until [[ \"$$(getent hosts config)\" ]]; do echo \"awaits for config\"; sleep 2; done;) && (until [[ \"$$(getent hosts discovery)\" ]]; do echo \"awaits for discovery\"; sleep 2; done;) && (until [[ \"$$(getent hosts server)\" ]]; do echo \"awaits for server\"; sleep 2; done;) && wait4ports tcp://$$(getent hosts rabbit | awk '{ print $$1 }'):5672 tcp://$$(getent hosts config | awk '{ print $$1 }'):5555 tcp://$$(getent hosts discovery | awk '{ print $$1 }'):8761 tcp://$$(getent hosts server | awk '{ print $$1 }'):4444 && java -jar client.jar --spring.profiles.active=docker"]
+    image: client
+    build:
+      context: ./client
+    networks:
+      - laba
+    ports:
+      - 4445:4445
+
+  rabbit:
+    image: rabbitmq:3
+    networks:
+      - laba
+    healthcheck:
+      test: if  rabbitmqctl node_health_check | grep -q 'passed'; then exit 0; else exit 1; fi
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  laba:

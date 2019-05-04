@@ -1,0 +1,6 @@
+vo/CityVO.class
+vo/Exceptions/ResponseExceptionHandler.class
+vo/HouseVO.class
+vo/CustomMessage.class
+vo/Exceptions/ItemNotFoundException.class
+vo/Exceptions/ErrorDetails.class
