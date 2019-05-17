@@ -2,6 +2,7 @@ package DaoJPA.Entities;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import vo.PersonVO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,6 +41,13 @@ public class Person {
 
     public void setPassport(String passport) {
         this.passport = passport;
+    }
+
+    public static Person fromVO(PersonVO personVO){
+        Person person = new Person();
+        person.setName(personVO.getName());
+        person.setPassport(personVO.getPassport());
+        return person;
     }
 
     public String toString(){

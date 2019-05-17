@@ -2,7 +2,7 @@ package DaoJPA.Entities;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-
+import vo.HouseOwnerVO;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -49,6 +49,14 @@ public class HouseOwner {
 
     public void setFlat(int flat) {
         this.flat = flat;
+    }
+
+    public static HouseOwner fromVO(HouseOwnerVO houseOwnerVO){
+        HouseOwner houseOwner = new HouseOwner();
+        houseOwner.setPerson_id(houseOwnerVO.getPerson_id());
+        houseOwner.setHouse_id(houseOwnerVO.getHouse_id());
+        houseOwner.setFlat(houseOwnerVO.getFlat());
+        return houseOwner;
     }
 
     public String toString(){

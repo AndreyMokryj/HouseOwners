@@ -1,9 +1,9 @@
 package DaoJPA.Controllers;
 
-import DaoJPA.Entities.House;
 import DaoJPA.Entities.Log;
-import DaoJPA.Repositories.HouseRepository;
+import DaoJPA.Entities.Person;
 import DaoJPA.Repositories.LogRepository;
+import DaoJPA.Repositories.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -13,17 +13,18 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
-import vo.HouseVO;
+import vo.PersonVO;
+
 import java.net.URI;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 
 @RestController    // This means that this class is a Controller
-@RequestMapping(path="/houses")
-public class HouseController {
+@RequestMapping(path="/people")
+public class PersonController {
     @Autowired
-    private HouseRepository houseRepository;
+    private PersonRepository personRepository;
 
     @Autowired
     private LogRepository logRepository;
@@ -43,34 +44,35 @@ public class HouseController {
     }
 
     @GetMapping(path="/")
-    public @ResponseBody Iterable<House> getAll() {
+    public @ResponseBody
+    Iterable<Person> getAll() {
         // This returns a JSON or XML with the users
-        return houseRepository.findAll();
+        return personRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public House retrieveHouse(@PathVariable long id) {
+    public Person retrievePerson(@PathVariable long id) {
         try {
-            Optional<House> house = houseRepository.findById(id);
+            Optional<Person> person = personRepository.findById(id);
 
-            return house.get();
+            return person.get();
         }
         catch (NoSuchElementException ex){
-            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
     }
 
     @PostMapping("/")
-    public ResponseEntity<Object> createHouse(@RequestBody HouseVO houseVO) {
+    public ResponseEntity<Object> createPerson(@RequestBody PersonVO personVO) {
 
-        House house = House.fromVO(houseVO);
+        Person person = Person.fromVO(personVO);
 
-        House savedHouse = houseRepository.save(house);
+        Person savedPerson = personRepository.save(person);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(savedHouse.getId()).toUri();
+                .buildAndExpand(savedPerson.getId()).toUri();
 
-        String message = "House created: " + savedHouse;
+        String message = "Person created: " + savedPerson;
         writeLog(message);
         return ResponseEntity.created(location).build();
     }
@@ -78,38 +80,38 @@ public class HouseController {
     @DeleteMapping("/delete/{id}")
     public void deleteHouse(@PathVariable long id) {
         try {
-            houseRepository.deleteById(id);
+            personRepository.deleteById(id);
 
-            String message = "House with id = " + id + " deleted";
+            String message = "Person with id = " + id + " deleted";
             writeLog(message);
         }
         catch (org.springframework.dao.EmptyResultDataAccessException ex){
-            String message = "House with id = " + id + " does not exist";
+            String message = "Person with id = " + id + " does not exist";
             writeLog(message);
-            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateHouse(@RequestBody HouseVO houseVO, @PathVariable long id) {
+    public ResponseEntity<Object> updatePerson(@RequestBody PersonVO personVO, @PathVariable long id) {
         try {
-            Optional<House> houseOptional = houseRepository.findById(id);
+            Optional<Person> personOptional = personRepository.findById(id);
 
-            if (houseOptional.get() == null);
+            if (personOptional.get() == null);
 
-            House house = House.fromVO(houseVO);
-            house.setId(id);
+            Person person = Person.fromVO(personVO);
+            person.setId(id);
 
-            houseRepository.save(house);
+            personRepository.save(person);
 
-            String message = "House updated: " + house;
+            String message = "Person updated: " + person;
             writeLog(message);
             return ResponseEntity.noContent().build();
         }
         catch (NoSuchElementException ex){
-            String message = "House with id=" + id + " doesn't exist";
+            String message = "Person with id=" + id + " doesn't exist";
             writeLog(message);
-            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
     }
 
