@@ -3,12 +3,9 @@ package vo;
 public class HouseVO {
     private Long id;
     private String address;
-    //private double price;
     private  Long city_id;
 
-    public Long getCity_id() {
-        return city_id;
-    }
+    public Long getCity_id() { return city_id; }
 
     public void setCity_id(Long id) {
         this.city_id = id;

@@ -6,31 +6,34 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cityService" />
         <module name="client" />
         <module name="config" />
         <module name="discovery" />
+        <module name="ownerService" />
         <module name="rabbit" />
-        <module name="server" />
         <module name="vo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cityService" target="1.8" />
       <module name="client" target="1.8" />
       <module name="config" target="1.8" />
       <module name="discovery" target="1.8" />
       <module name="eureka" target="1.8" />
+      <module name="ownerService" target="1.8" />
       <module name="rabbit" target="1.8" />
-      <module name="server" target="1.8" />
       <module name="vo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cityService" options="-parameters" />
       <module name="client" options="-parameters" />
       <module name="config" options="-parameters" />
       <module name="discovery" options="-parameters" />
+      <module name="ownerService" options="-parameters" />
       <module name="rabbit" options="-parameters" />
-      <module name="server" options="-parameters" />
       <module name="vo" options="-parameters" />
     </option>
   </component>

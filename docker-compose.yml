@@ -6,7 +6,7 @@ services:
     build:
       context: ./config
     volumes:
-      - /Users/andrew/application-config2:/configFile
+      - /Users/andrew/application-config4:/configFile
     networks:
       - laba
     ports:
