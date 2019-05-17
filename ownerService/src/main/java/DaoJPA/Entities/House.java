@@ -2,6 +2,7 @@ package DaoJPA.Entities;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import vo.HouseVO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,6 @@ public class House {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String address;
-    //private double price;
     private  Long city_id;
 
     public Long getCity_id() {
@@ -44,9 +44,15 @@ public class House {
         this.address = address;
     }
 
+    public static House fromVO(HouseVO houseVO){
+        House house = new House();
+        house.setCity_id(houseVO.getCity_id());
+        house.setAddress(houseVO.getAddress());
+        return house;
+    }
+
     public String toString(){
         String x = "{id: " + getId() + ", address: " + getAddress() + ", city_id: " + getCity_id() + "}";
-
         return x;
     }
 }

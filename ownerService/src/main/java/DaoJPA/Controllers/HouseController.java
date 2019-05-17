@@ -34,44 +34,15 @@ public class HouseController {
     private static final Logger log = LoggerFactory.getLogger(HouseController.class);
     private CountDownLatch latch = new CountDownLatch(1);
 
-//    public void receiveMessage(String message) {
-//        System.out.println("Received <" + message + ">");
-//        latch.countDown();
-//    }
-
-//    @RabbitListener(queues = RabbitApp.QUEUE_GENERIC_NAME)
-//    public void receiveMessage(final Message message) {
-//        log.info("Received message as generic: {}", message.toString());
-//        Log log1 = new Log();
-//        log1.setText(message.toString());
-//        logRepository.save(log1);
-//    }
-
     @RabbitListener(queues = RabbitConfiguration.QUEUE_SPECIFIC_NAME)
     public void receiveMessage(final CustomMessage customMessage) {
         log.info("Received message as specific class: {}", customMessage.toString());
-        Log log1 = new Log();
-        log1.setText(customMessage.toString());
-        logRepository.save(log1);
+        writeLog(customMessage.toString());
     }
 
     public CountDownLatch getLatch() {
         return latch;
     }
-
-    //Rabbit send
-//    private final RabbitTemplate rabbitTemplate;
-//
-//    public HouseController(RabbitTemplate rabbitTemplate) {
-//        this.rabbitTemplate = rabbitTemplate;
-//    }
-//
-//    public void sendMessage(String x) {
-//        final CustomMessage message = new CustomMessage(x, new Random().nextInt(50), false);
-//        log.info("Sending message...");
-//        rabbitTemplate.convertAndSend(RabbitApp.EXCHANGE_NAME, RabbitApp.ROUTING_KEY, message);
-//    }
-
 
     @GetMapping(path="/")
     public @ResponseBody Iterable<House> getAll() {
@@ -93,10 +64,8 @@ public class HouseController {
 
     @PostMapping("/")
     public ResponseEntity<Object> createHouse(@RequestBody HouseVO houseVO) {
-        House house = new House();
-        //house.setId(houseVO.getId());
-        house.setCity_id(houseVO.getCity_id());
-        house.setAddress(houseVO.getAddress());
+
+        House house = House.fromVO(houseVO);
 
         House savedHouse = houseRepository.save(house);
 
@@ -104,10 +73,7 @@ public class HouseController {
                 .buildAndExpand(savedHouse.getId()).toUri();
 
         String message = "House created: " + savedHouse;
-        Log log3 = new Log();
-        log3.setText(message);
-        logRepository.save(log3);
-
+        writeLog(message);
         return ResponseEntity.created(location).build();
     }
 
@@ -117,15 +83,11 @@ public class HouseController {
             houseRepository.deleteById(id);
 
             String message = "House with id = " + id + " deleted";
-            Log log3 = new Log();
-            log3.setText(message);
-            logRepository.save(log3);
+            writeLog(message);
         }
         catch (org.springframework.dao.EmptyResultDataAccessException ex){
             String message = "House with id = " + id + " does not exist";
-            Log log3 = new Log();
-            log3.setText(message);
-            logRepository.save(log3);
+            writeLog(message);
             throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
         }
     }
@@ -136,28 +98,26 @@ public class HouseController {
             Optional<House> houseOptional = houseRepository.findById(id);
 
             if (houseOptional.get() == null);
-            //return ResponseEntity.notFound().build();
 
-            House house = new House();
+            House house = House.fromVO(houseVO);
             house.setId(id);
-            house.setAddress(houseVO.getAddress());
-//            house.setPrice(houseVO.getPrice());
-            house.setCity_id(houseVO.getCity_id());
 
             houseRepository.save(house);
-            String message = "Houce updated: " + house;
-            Log log3 = new Log();
-            log3.setText(message);
-            logRepository.save(log3);
 
+            String message = "Houce updated: " + house;
+            writeLog(message);
             return ResponseEntity.noContent().build();
         }
         catch (NoSuchElementException ex){
             String message = "Houce with id=" + id + " doesn't exist";
-            Log log3 = new Log();
-            log3.setText(message);
-            logRepository.save(log3);
+            writeLog(message);
             throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
         }
+    }
+
+    public void writeLog(String message){
+        Log log = new Log();
+        log.setText(message);
+        logRepository.save(log);
     }
 }
