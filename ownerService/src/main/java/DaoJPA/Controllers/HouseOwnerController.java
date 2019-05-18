@@ -50,6 +50,20 @@ public class HouseOwnerController {
         return houseOwnerRepository.findAll();
     }
 
+    @GetMapping(path="/person_id={id}")
+    public @ResponseBody
+    Iterable<HouseOwner> getByPersonId(@PathVariable long id) {
+        // This returns a JSON or XML with the users
+        return houseOwnerRepository.findByPID(id);
+    }
+
+    @GetMapping(path="/house_id={id}")
+    public @ResponseBody
+    Iterable<HouseOwner> getByHouseId(@PathVariable long id) {
+        // This returns a JSON or XML with the users
+        return houseOwnerRepository.findByHID(id);
+    }
+
     @GetMapping("/{id}")
     public HouseOwner retrieveHouseOwner(@PathVariable long id) {
         try {
