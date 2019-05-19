@@ -78,9 +78,9 @@ public class HouseController {
     @DeleteMapping("/delete/{id}")
     public void deleteHouse(@PathVariable long id) {
         try {
-            houseRepository.deleteHouseOwners(id);
-            houseRepository.deleteById(id);
-
+//            houseRepository.deleteHouseOwners(id);
+//            houseRepository.deleteById(id);
+            House.softDeleteById(houseRepository, id);
             String message = "House with id = " + id + " deleted";
             writeLog(message);
         }

@@ -80,9 +80,9 @@ public class PersonController {
     @DeleteMapping("/delete/{id}")
     public void deleteHouse(@PathVariable long id) {
         try {
-            personRepository.deleteHouseOwners(id);
-            personRepository.deleteById(id);
-
+//            personRepository.deleteHouseOwners(id);
+//            personRepository.deleteById(id);
+            Person.softDeleteById(personRepository, id);
             String message = "Person with id = " + id + " deleted";
             writeLog(message);
         }

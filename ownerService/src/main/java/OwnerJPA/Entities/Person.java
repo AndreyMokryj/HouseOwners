@@ -1,5 +1,6 @@
 package OwnerJPA.Entities;
 
+import OwnerJPA.Repositories.PersonRepository;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import vo.PersonVO;
@@ -48,6 +49,11 @@ public class Person {
         person.setName(personVO.getName());
         person.setPassport(personVO.getPassport());
         return person;
+    }
+
+    public static void softDeleteById(PersonRepository repository, long id){
+        HouseOwner.softDeleteByOwnerId(repository, id);
+        repository.deleteById(id);
     }
 
     public String toString(){

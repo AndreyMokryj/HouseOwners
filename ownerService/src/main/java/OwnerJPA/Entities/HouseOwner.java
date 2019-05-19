@@ -1,7 +1,11 @@
 package OwnerJPA.Entities;
 
+import OwnerJPA.Repositories.HouseOwnerRepository;
+import OwnerJPA.Repositories.HouseRepository;
+import OwnerJPA.Repositories.PersonRepository;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.springframework.beans.factory.annotation.Autowired;
 import vo.HouseOwnerVO;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -57,6 +61,18 @@ public class HouseOwner {
         houseOwner.setHouse_id(houseOwnerVO.getHouse_id());
         houseOwner.setFlat(houseOwnerVO.getFlat());
         return houseOwner;
+    }
+
+    public static void softDeleteById(HouseOwnerRepository repository, long id){
+        repository.deleteById(id);
+    }
+
+    public static void softDeleteByHouseId(HouseRepository repository, long id){
+        repository.deleteHouseOwners(id);
+    }
+
+    public static void softDeleteByOwnerId(PersonRepository repository, long id){
+        repository.deleteHouseOwners(id);
     }
 
     public String toString(){
