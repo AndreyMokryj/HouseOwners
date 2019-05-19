@@ -1,6 +1,6 @@
-package DaoJPA.Repositories;
+package OwnerJPA.Repositories;
 
-import DaoJPA.Entities.House;
+import OwnerJPA.Entities.House;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

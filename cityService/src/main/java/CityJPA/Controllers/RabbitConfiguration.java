@@ -1,4 +1,4 @@
-package DaoJPA.Controllers;
+package CityJPA.Controllers;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

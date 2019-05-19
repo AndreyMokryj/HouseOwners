@@ -1,9 +1,9 @@
-package DaoJPA.Controllers;
+package OwnerJPA.Controllers;
 
-import DaoJPA.Entities.HouseOwner;
-import DaoJPA.Entities.Log;
-import DaoJPA.Repositories.HouseOwnerRepository;
-import DaoJPA.Repositories.LogRepository;
+import OwnerJPA.Entities.HouseOwner;
+import OwnerJPA.Entities.Log;
+import OwnerJPA.Repositories.HouseOwnerRepository;
+import OwnerJPA.Repositories.LogRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

@@ -1,6 +1,6 @@
-package DaoJPA.Repositories;
+package OwnerJPA.Repositories;
 
-import DaoJPA.Entities.Log;
+import OwnerJPA.Entities.Log;
 import org.springframework.data.repository.CrudRepository;
 
 public interface LogRepository extends CrudRepository<Log, Long> {

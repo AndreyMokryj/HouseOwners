@@ -1,23 +1,22 @@
-package DaoJPA.Entities;
+package CityJPA.Entities;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import vo.PersonVO;
+import vo.RegionVO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "people")
 @Where(clause = "deleted = 0")
-@SQLDelete(sql = "update people set deleted = 1 where id = ?")
-public class Person {
+@SQLDelete(sql = "update regions set deleted = 1 where id = ?")
+@Entity(name = "regions")
+public class Region {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String passport;
 
     public Long getId() {
         return id;
@@ -35,23 +34,14 @@ public class Person {
         this.name = name;
     }
 
-    public String getPassport() {
-        return passport;
-    }
-
-    public void setPassport(String passport) {
-        this.passport = passport;
-    }
-
-    public static Person fromVO(PersonVO personVO){
-        Person person = new Person();
-        person.setName(personVO.getName());
-        person.setPassport(personVO.getPassport());
-        return person;
+    public static Region fromVO(RegionVO regionVO){
+        Region region = new Region();
+        region.setName(regionVO.getName());
+        return region;
     }
 
     public String toString(){
-        String x  = "{id: " + getId() + ", name: " + getName() + ", passport: " + getPassport() + "}";
+        String x  = "{id: " + getId() + ", name: " + getName() + "}";
         return x;
     }
 }

@@ -203,5 +203,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.6" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.6" level="project" />
     <orderEntry type="module" module-name="rabbit" />
+    <orderEntry type="module" module-name="ownerService" />
   </component>
 </module>

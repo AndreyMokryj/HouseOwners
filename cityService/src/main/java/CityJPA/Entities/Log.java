@@ -1,4 +1,4 @@
-package DaoJPA.Entities;
+package CityJPA.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

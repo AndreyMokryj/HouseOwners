@@ -1,4 +1,4 @@
-package DaoJPA.Entities;
+package OwnerJPA.Entities;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
