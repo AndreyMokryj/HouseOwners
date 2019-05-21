@@ -2,8 +2,6 @@ package app.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.core.Message;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -20,20 +18,19 @@ import vo.HouseVO;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.CountDownLatch;
 
 @RestController
-@RequestMapping(path="/houses")
-public class HouseServiceController {
+@RequestMapping(path="/cities")
+public class CityClientController {
     @Autowired
     RestTemplate restTemplate;
 
     //Rabbit send
-    private static final Logger log = LoggerFactory.getLogger(HouseServiceController.class);
+    private static final Logger log = LoggerFactory.getLogger(CityClientController.class);
 
     private final RabbitTemplate rabbitTemplate;
 
-    public HouseServiceController(RabbitTemplate rabbitTemplate) {
+    public CityClientController(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
