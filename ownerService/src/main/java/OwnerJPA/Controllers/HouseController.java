@@ -1,6 +1,7 @@
 package OwnerJPA.Controllers;
 
 import OwnerJPA.Entities.House;
+import OwnerJPA.Entities.HouseOwner;
 import OwnerJPA.Entities.Log;
 import OwnerJPA.Repositories.HouseRepository;
 import OwnerJPA.Repositories.LogRepository;
@@ -78,9 +79,7 @@ public class HouseController {
     @DeleteMapping("/delete/{id}")
     public void deleteHouse(@PathVariable long id) {
         try {
-//            houseRepository.deleteHouseOwners(id);
-//            houseRepository.deleteById(id);
-            House.softDeleteById(houseRepository, id);
+            houseRepository.deleteById(id);
             String message = "House with id = " + id + " deleted";
             writeLog(message);
         }

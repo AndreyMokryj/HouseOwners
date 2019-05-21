@@ -1,5 +1,6 @@
 package CityJPA.Entities;
 
+import CityJPA.Repositories.CityRepository;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import vo.CityVO;

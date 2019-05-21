@@ -67,14 +67,6 @@ public class HouseOwner {
         repository.deleteById(id);
     }
 
-    public static void softDeleteByHouseId(HouseRepository repository, long id){
-        repository.deleteHouseOwners(id);
-    }
-
-    public static void softDeleteByOwnerId(PersonRepository repository, long id){
-        repository.deleteHouseOwners(id);
-    }
-
     public String toString(){
         String x  = "{id: " + getId() + "person_id: " + getPerson_id() + ", house_id: " + getHouse_id() + ", flat: " + getFlat() + "}";
         return x;

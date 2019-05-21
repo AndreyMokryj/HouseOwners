@@ -51,11 +51,6 @@ public class Person {
         return person;
     }
 
-    public static void softDeleteById(PersonRepository repository, long id){
-        HouseOwner.softDeleteByOwnerId(repository, id);
-        repository.deleteById(id);
-    }
-
     public String toString(){
         String x  = "{id: " + getId() + ", name: " + getName() + ", passport: " + getPassport() + "}";
         return x;
