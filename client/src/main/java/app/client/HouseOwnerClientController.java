@@ -115,9 +115,9 @@ public class HouseOwnerClientController {
         }
     }
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate2() {
-        return new RestTemplate();
-    }
+//    @Bean
+//    @LoadBalanced
+//    private RestTemplate restTemplate2() {
+//        return new RestTemplate();
+//    }
 }

@@ -116,9 +116,9 @@ public class RegionClientController {
         }
     }
 
-    @Bean
-    @LoadBalanced
-    private RestTemplate restTemplate4() {
-        return new RestTemplate();
-    }
+//    @Bean
+//    @LoadBalanced
+//    private RestTemplate restTemplate4() {
+//        return new RestTemplate();
+//    }
 }

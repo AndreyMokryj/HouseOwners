@@ -115,9 +115,9 @@ public class PersonClientController {
         }
     }
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate3() {
-        return new RestTemplate();
-    }
+//    @Bean
+//    @LoadBalanced
+//    private RestTemplate restTemplate3() {
+//        return new RestTemplate();
+//    }
 }

@@ -11,6 +11,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import rabbit.RabbitApp;
+import vo.CityVO;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
 import vo.HouseVO;
@@ -71,9 +72,9 @@ public class CityClientController {
 
 
     @GetMapping(path = "/")
-    public String getProducts()
+    public String getCities()
     {
-        String response = restTemplate.exchange("http://service0/houses/",
+        String response = restTemplate.exchange("http://city-service/cities/",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
 
         System.out.println("Response Received as " + response);
@@ -85,7 +86,7 @@ public class CityClientController {
     public String getById(@PathVariable long id)
     {
         try {
-            String response = restTemplate.exchange("http://service0/houses/{id}",
+            String response = restTemplate.exchange("http://city-service/cities/{id}",
                     HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
 
             System.out.println("Response Received as " + response);
@@ -93,26 +94,26 @@ public class CityClientController {
             return response;
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
         }
     }
 
     @PostMapping("/")
-    public void createProduct(@RequestBody HouseVO product)
+    public void createCity(@RequestBody CityVO city)
     {
-        String message = "Request to create house: " + product;
+        String message = "Request to create city: " + city;
         sendMessage(message);
 //        rabbitTemplate.convertAndSend(Application.topicExchangeName, "foo.bar.baz", message);
 
-        Object response = restTemplate.postForObject("http://service0/houses/", product, Object.class);
+        Object response = restTemplate.postForObject("http://city-service/cities/", city, Object.class);
         System.out.println("Response Received as " + response);
 
         //return response;
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteProduct(@PathVariable long id) {
-        String message = "Request to delete house with id = " + id;
+    public void deleteCity(@PathVariable long id) {
+        String message = "Request to delete city with id = " + id;
         sendMessage(message);
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
@@ -120,16 +121,16 @@ public class CityClientController {
         params.put("id", id);
 
         try {
-            restTemplate.delete("http://service0/houses/delete/{id}", params);
+            restTemplate.delete("http://city-service/cities/delete/{id}", params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
         }
     }
 
     @PutMapping("/{id}")
-    public void updateProduct(@RequestBody HouseVO product, @PathVariable long id) {
-        String message = "Request to update house with id = " + id+ ", body:" + product;
+    public void updateCity(@RequestBody CityVO city, @PathVariable long id) {
+        String message = "Request to update city with id = " + id+ ", body:" + city;
         sendMessage(message);
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
@@ -137,10 +138,10 @@ public class CityClientController {
         params.put("id", id);
 
         try {
-            restTemplate.put( "http://service0/houses/{id}", product, params);
+            restTemplate.put( "http://city-service/cities/{id}", city, params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("Product with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
         }
     }
 
