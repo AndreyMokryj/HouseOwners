@@ -55,7 +55,7 @@ public class HouseClientController {
     public String getById(@PathVariable long id)
     {
         try {
-            String response = restTemplate1.exchange("http://service0/houses/{id}",
+            String response = restTemplate1.exchange("http://owner-service/houses/{id}",
                     HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
 
             System.out.println("Response Received as " + response);
@@ -68,20 +68,20 @@ public class HouseClientController {
     }
 
     @PostMapping("/")
-    public void createProduct(@RequestBody HouseVO product)
+    public void createHouse(@RequestBody HouseVO house)
     {
-        String message = "Request to create house: " + product;
+        String message = "Request to create house: " + house;
         sendMessage(message);
 //        rabbitTemplate.convertAndSend(Application.topicExchangeName, "foo.bar.baz", message);
 
-        Object response = restTemplate1.postForObject("http://service0/houses/", product, Object.class);
+        Object response = restTemplate1.postForObject("http://owner-service/houses/", house, Object.class);
         System.out.println("Response Received as " + response);
 
         //return response;
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteProduct(@PathVariable long id) {
+    public void deleteHouse(@PathVariable long id) {
         String message = "Request to delete house with id = " + id;
         sendMessage(message);
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
@@ -90,7 +90,7 @@ public class HouseClientController {
         params.put("id", id);
 
         try {
-            restTemplate1.delete("http://service0/houses/delete/{id}", params);
+            restTemplate1.delete("http://owner-service/houses/delete/{id}", params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
             throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
@@ -98,8 +98,8 @@ public class HouseClientController {
     }
 
     @PutMapping("/{id}")
-    public void updateProduct(@RequestBody HouseVO product, @PathVariable long id) {
-        String message = "Request to update house with id = " + id+ ", body:" + product;
+    public void updateHouse(@RequestBody HouseVO house, @PathVariable long id) {
+        String message = "Request to update house with id = " + id+ ", body:" + house;
         sendMessage(message);
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
@@ -107,10 +107,10 @@ public class HouseClientController {
         params.put("id", id);
 
         try {
-            restTemplate1.put( "http://service0/houses/{id}", product, params);
+            restTemplate1.put( "http://owner-service/houses/{id}", house, params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("Product with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
         }
     }
 

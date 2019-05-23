@@ -15,6 +15,7 @@ import rabbit.RabbitApp;
 import vo.CityVO;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
+import vo.RegionVO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,7 +43,7 @@ public class RegionClientController {
     }
 
     @GetMapping(path = "/")
-    public String getVendors()
+    public String getRegions()
     {
         String response = restTemplate4.exchange("http://city-service/regions/",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
@@ -56,7 +57,7 @@ public class RegionClientController {
     public String getById(@PathVariable long id)
     {
         try {
-            String response = restTemplate4.exchange("http://service0/cities/{id}",
+            String response = restTemplate4.exchange("http://city-service/regions/{id}",
                     HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
 
             System.out.println("Response Received as " + response);
@@ -64,27 +65,27 @@ public class RegionClientController {
             return response;
         }
         catch (HttpClientErrorException ex){
-            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
         }
 
     }
 
     @PostMapping("/")
-    public void createVendor(@RequestBody CityVO cityVO)
+    public void createRegion(@RequestBody RegionVO regionVO)
     {
-        String message = "Request to create city: " + cityVO;
+        String message = "Request to create region: " + regionVO;
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
-        Object response = restTemplate4.postForObject("http://service0/cities/", cityVO, Object.class);
+        Object response = restTemplate4.postForObject("http://city-service/regions/", regionVO, Object.class);
         System.out.println("Response Received as " + response);
 
         //return response;
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteVendor(@PathVariable long id) {
-        String message = "Request to delete city with id = " + id;
+    public void deleteRegion(@PathVariable long id) {
+        String message = "Request to delete region with id = " + id;
         sendMessage(message);
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
@@ -92,16 +93,16 @@ public class RegionClientController {
         params.put("id", id);
 
         try {
-            restTemplate4.delete("http://service0/cities/delete/{id}", params);
+            restTemplate4.delete("http://city-service/regions/delete/{id}", params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
         }
     }
 
     @PutMapping("/{id}")
-    public void updateVendor(@RequestBody CityVO cityVO, @PathVariable long id) {
-        String message = "Request to update city with id = " + id+ ", body:" + cityVO;
+    public void updateRegion(@RequestBody RegionVO regionVO, @PathVariable long id) {
+        String message = "Request to update region with id = " + id+ ", body:" + regionVO;
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
@@ -109,10 +110,10 @@ public class RegionClientController {
         params.put("id", id);
 
         try {
-            restTemplate4.put( "http://city-service/cities/{id}", cityVO, params);
+            restTemplate4.put( "http://city-service/regions/{id}", regionVO, params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
         }
     }
 

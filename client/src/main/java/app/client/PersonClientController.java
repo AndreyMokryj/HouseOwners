@@ -14,6 +14,7 @@ import rabbit.RabbitApp;
 import vo.CityVO;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
+import vo.PersonVO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -55,7 +56,7 @@ public class PersonClientController {
     public String getById(@PathVariable long id)
     {
         try {
-            String response = restTemplate3.exchange("http://service0/cities/{id}",
+            String response = restTemplate3.exchange("http://owner-service/people/{id}",
                     HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
 
             System.out.println("Response Received as " + response);
@@ -63,27 +64,27 @@ public class PersonClientController {
             return response;
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
 
     }
 
     @PostMapping("/")
-    public void createVendor(@RequestBody CityVO cityVO)
+    public void createPerson(@RequestBody PersonVO personVO)
     {
-        String message = "Request to create city: " + cityVO;
+        String message = "Request to create person: " + personVO;
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
-        Object response = restTemplate3.postForObject("http://service0/cities/", cityVO, Object.class);
+        Object response = restTemplate3.postForObject("http://owner-service/people/", personVO, Object.class);
         System.out.println("Response Received as " + response);
 
         //return response;
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteVendor(@PathVariable long id) {
-        String message = "Request to delete city with id = " + id;
+    public void deletePerson(@PathVariable long id) {
+        String message = "Request to delete person with id = " + id;
         sendMessage(message);
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
@@ -91,16 +92,16 @@ public class PersonClientController {
         params.put("id", id);
 
         try {
-            restTemplate3.delete("http://service0/cities/delete/{id}", params);
+            restTemplate3.delete("http://owner-service/people/delete/{id}", params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
     }
 
     @PutMapping("/{id}")
-    public void updateVendor(@RequestBody CityVO cityVO, @PathVariable long id) {
-        String message = "Request to update city with id = " + id+ ", body:" + cityVO;
+    public void updatePerson(@RequestBody PersonVO personVO, @PathVariable long id) {
+        String message = "Request to update person with id = " + id+ ", body:" + personVO;
         //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
@@ -108,10 +109,10 @@ public class PersonClientController {
         params.put("id", id);
 
         try {
-            restTemplate3.put( "http://service0/cities/{id}", cityVO, params);
+            restTemplate3.put( "http://owner-service/people/{id}", personVO, params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
     }
 
