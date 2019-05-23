@@ -35,41 +35,11 @@ public class CityClientController {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-//    public void sendMessage(String x) {
-////        final CustomMessage message = new CustomMessage(x, new Random().nextInt(50), false);
-////        log.info("Sending message...");
-////        //rabbitTemplate.convertAndSend(MessagingApplication.EXCHANGE_NAME, MessagingApplication.ROUTING_KEY, message);
-////        rabbitTemplate.convertAndSend(Application.topicExchangeName, "foo.bar.baz", message);
-////    }
-
     public void sendMessage(String x) {
         final CustomMessage message = new CustomMessage(x, new Random().nextInt(50), false);
         log.info("Sending message...");
         rabbitTemplate.convertAndSend(RabbitApp.EXCHANGE_NAME, RabbitApp.ROUTING_KEY, message);
     }
-
-    //Rabbit receive
-//    private CountDownLatch latch = new CountDownLatch(1);
-//
-////    public void receiveMessage(String message) {
-////        System.out.println("Received <" + message + ">");
-////        latch.countDown();
-////    }
-//
-//    @RabbitListener(queues = RabbitApp.QUEUE_GENERIC_NAME)
-//    public void receiveMessage(final Message message) {
-//        log.info("Received message as generic: {}", message.toString());
-//    }
-//
-//    @RabbitListener(queues = RabbitApp.QUEUE_SPECIFIC_NAME)
-//    public void receiveMessage(final CustomMessage customMessage) {
-//        log.info("Received message as specific class: {}", customMessage.toString());
-//    }
-//
-//    public CountDownLatch getLatch() {
-//        return latch;
-//    }
-
 
     @GetMapping(path = "/")
     public String getCities()

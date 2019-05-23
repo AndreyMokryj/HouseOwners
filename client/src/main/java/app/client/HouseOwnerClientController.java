@@ -41,9 +41,9 @@ public class HouseOwnerClientController {
     }
 
     @GetMapping(path = "/")
-    public String getVendors()
+    public String getHouseOwners()
     {
-        String response = restTemplate2.exchange("http://service0/cities/",
+        String response = restTemplate2.exchange("http://owner-service/house-owners/",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
 
         System.out.println("Response Received as " + response);

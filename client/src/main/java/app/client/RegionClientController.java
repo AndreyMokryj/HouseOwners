@@ -44,7 +44,7 @@ public class RegionClientController {
     @GetMapping(path = "/")
     public String getVendors()
     {
-        String response = restTemplate4.exchange("http://service0/cities/",
+        String response = restTemplate4.exchange("http://city-service/regions/",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
 
         System.out.println("Response Received as " + response);
@@ -109,7 +109,7 @@ public class RegionClientController {
         params.put("id", id);
 
         try {
-            restTemplate4.put( "http://service0/cities/{id}", cityVO, params);
+            restTemplate4.put( "http://city-service/cities/{id}", cityVO, params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
             throw new ItemNotFoundException("City with id=" + id + " doesn't exist");

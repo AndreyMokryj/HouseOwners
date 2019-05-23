@@ -41,9 +41,9 @@ public class PersonClientController {
     }
 
     @GetMapping(path = "/")
-    public String getVendors()
+    public String getPeople()
     {
-        String response = restTemplate3.exchange("http://service0/cities/",
+        String response = restTemplate3.exchange("http://owner-service/people/",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
 
         System.out.println("Response Received as " + response);
