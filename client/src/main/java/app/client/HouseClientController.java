@@ -72,19 +72,15 @@ public class HouseClientController {
     {
         String message = "Request to create house: " + house;
         sendMessage(message);
-//        rabbitTemplate.convertAndSend(Application.topicExchangeName, "foo.bar.baz", message);
 
         Object response = restTemplate1.postForObject("http://owner-service/houses/", house, Object.class);
         System.out.println("Response Received as " + response);
-
-        //return response;
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteHouse(@PathVariable long id) {
         String message = "Request to delete house with id = " + id;
         sendMessage(message);
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
@@ -101,7 +97,6 @@ public class HouseClientController {
     public void updateHouse(@RequestBody HouseVO house, @PathVariable long id) {
         String message = "Request to update house with id = " + id+ ", body:" + house;
         sendMessage(message);
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
@@ -113,10 +108,4 @@ public class HouseClientController {
             throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
         }
     }
-
-//    @Bean
-//    @LoadBalanced
-//    private RestTemplate restTemplate1() {
-//        return new RestTemplate();
-//    }
 }

@@ -39,22 +39,9 @@ public class CityController {
 
     private Log log2 = new Log();
 
-//    public void receiveMessage(String message) {
-//        System.out.println("Received <" + message + ">");
-//        latch.countDown();
-//    }
-
-//    @RabbitListener(queues = RabbitApp.QUEUE_GENERIC_NAME)
-//    public void receiveMessage(final Message message) {
-//        log.info("Received message as generic: {}", message.toString());
-//    }
-
     @RabbitListener(queues = RabbitConfiguration.QUEUE_SPECIFIC_NAME)
     public void receiveMessage(final CustomMessage customMessage) {
         log.info("Received message as specific class: {}", customMessage.toString());
-//        Log log1 = new Log();
-//        log1.setText(customMessage.toString());
-//        logRepository.save(log1);
         writeLog(customMessage.toString());
     }
 
@@ -73,8 +60,6 @@ public class CityController {
         try {
             Optional<City> city = cityRepository.findById(id);
 
-//            if(city.get() == null)
-//                throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
             return city.get();
         }
         catch (NoSuchElementException ex){
@@ -85,11 +70,6 @@ public class CityController {
 
     @PostMapping("/")
     public ResponseEntity<Object> createCity(@RequestBody CityVO cityVO) {
-//        City city = new City();
-//        city.setName(cityVO.getName());
-//        //city.setSite(cityVO.getSite());
-//        city.setPopulation(cityVO.getPopulation());
-
         City city = City.fromVO(cityVO);
         //logRepository.save(log2);
         City savedCity = cityRepository.save(city);
@@ -99,10 +79,6 @@ public class CityController {
 
         String message = "City created: " + savedCity;
 
-//        Log log3 = new Log();
-//        log3.setText(message);
-//        logRepository.save(log3);
-
         writeLog(message);
         return ResponseEntity.created(location).build();
     }
@@ -110,22 +86,14 @@ public class CityController {
     @DeleteMapping("/delete/{id}")
     public void deleteCity(@PathVariable long id) {
         try {
-            //cityRepository.deleteHouses(id);
             cityRepository.deleteById(id);
 
             String message = "City with id = " + id + " deleted";
-//            Log log3 = new Log();
-//            log3.setText(message);
-//            logRepository.save(log3);
-
             writeLog(message);
 
         }
         catch (org.springframework.dao.EmptyResultDataAccessException ex){
             String message = "City with id = " + id + " does not exist";
-//            Log log3 = new Log();
-//            log3.setText(message);
-//            logRepository.save(log3);
             writeLog(message);
             throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
         }
@@ -138,32 +106,19 @@ public class CityController {
 
             if (cityOptional.get() == null) ;
 
-//            City city = new City();
-//            city.setName(cityVO.getName());
-//            //city.setSite(cityVO.getSite());
-//            city.setPopulation(cityVO.getPopulation());
-
             City city = City.fromVO(cityVO);
             city.setId(id);
 
             cityRepository.save(city);
             String message = "City updated: " + city;
-//            Log log3 = new Log();
-//            log3.setText(message);
-//            logRepository.save(log3);
-
             writeLog(message);
             return ResponseEntity.noContent().build();
         }
         catch (NoSuchElementException ex){
             String message = "City with id = " + id + " does not exist";
-//            Log log3 = new Log();
-//            log3.setText(message);
-//            logRepository.save(log3);
             writeLog(message);
             throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
         }
-
     }
 
     public void writeLog(String message){

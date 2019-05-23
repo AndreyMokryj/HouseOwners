@@ -73,20 +73,16 @@ public class PersonClientController {
     public void createPerson(@RequestBody PersonVO personVO)
     {
         String message = "Request to create person: " + personVO;
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
         Object response = restTemplate3.postForObject("http://owner-service/people/", personVO, Object.class);
         System.out.println("Response Received as " + response);
-
-        //return response;
     }
 
     @DeleteMapping("/delete/{id}")
     public void deletePerson(@PathVariable long id) {
         String message = "Request to delete person with id = " + id;
         sendMessage(message);
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
@@ -102,7 +98,6 @@ public class PersonClientController {
     @PutMapping("/{id}")
     public void updatePerson(@RequestBody PersonVO personVO, @PathVariable long id) {
         String message = "Request to update person with id = " + id+ ", body:" + personVO;
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
         Map<String, Long> params = new HashMap<String, Long>();
@@ -115,10 +110,4 @@ public class PersonClientController {
             throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
     }
-
-//    @Bean
-//    @LoadBalanced
-//    private RestTemplate restTemplate3() {
-//        return new RestTemplate();
-//    }
 }

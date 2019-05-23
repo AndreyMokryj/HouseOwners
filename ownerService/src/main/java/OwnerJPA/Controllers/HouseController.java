@@ -63,9 +63,7 @@ public class HouseController {
 
     @PostMapping("/")
     public ResponseEntity<Object> createHouse(@RequestBody HouseVO houseVO) {
-
         House house = House.fromVO(houseVO);
-
         House savedHouse = houseRepository.save(house);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -99,7 +97,6 @@ public class HouseController {
 
             House house = House.fromVO(houseVO);
             house.setId(id);
-
             houseRepository.save(house);
 
             String message = "House updated: " + house;

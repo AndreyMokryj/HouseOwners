@@ -74,20 +74,16 @@ public class RegionClientController {
     public void createRegion(@RequestBody RegionVO regionVO)
     {
         String message = "Request to create region: " + regionVO;
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
         Object response = restTemplate4.postForObject("http://city-service/regions/", regionVO, Object.class);
         System.out.println("Response Received as " + response);
-
-        //return response;
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteRegion(@PathVariable long id) {
         String message = "Request to delete region with id = " + id;
         sendMessage(message);
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
@@ -103,7 +99,6 @@ public class RegionClientController {
     @PutMapping("/{id}")
     public void updateRegion(@RequestBody RegionVO regionVO, @PathVariable long id) {
         String message = "Request to update region with id = " + id+ ", body:" + regionVO;
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
         Map<String, Long> params = new HashMap<String, Long>();
@@ -116,10 +111,4 @@ public class RegionClientController {
             throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
         }
     }
-
-//    @Bean
-//    @LoadBalanced
-//    private RestTemplate restTemplate4() {
-//        return new RestTemplate();
-//    }
 }

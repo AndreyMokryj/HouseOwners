@@ -69,7 +69,6 @@ public class HouseOwnerController {
     public HouseOwner retrieveHouseOwner(@PathVariable long id) {
         try {
             Optional<HouseOwner> houseOwner = houseOwnerRepository.findById(id);
-
             return houseOwner.get();
         }
         catch (NoSuchElementException ex){
@@ -79,9 +78,7 @@ public class HouseOwnerController {
 
     @PostMapping("/")
     public ResponseEntity<Object> createHouseOwner(@RequestBody HouseOwnerVO houseOwnerVO) {
-
         HouseOwner houseOwner = HouseOwner.fromVO(houseOwnerVO);
-
         HouseOwner savedHouseOwner = houseOwnerRepository.save(houseOwner);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -95,9 +92,7 @@ public class HouseOwnerController {
     @DeleteMapping("/delete/{id}")
     public void deleteHouseOwner(@PathVariable long id) {
         try {
-            //houseOwnerRepository.deleteById(id);
             HouseOwner.softDeleteById(houseOwnerRepository, id);
-
             String message = "HouseOwner with id = " + id + " deleted";
             writeLog(message);
         }
@@ -117,7 +112,6 @@ public class HouseOwnerController {
 
             HouseOwner houseOwner = HouseOwner.fromVO(houseOwnerVO);
             houseOwner.setId(id);
-
             houseOwnerRepository.save(houseOwner);
 
             String message = "HouseOwner updated: " + houseOwner;

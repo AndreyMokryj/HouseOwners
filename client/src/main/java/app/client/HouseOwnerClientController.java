@@ -73,20 +73,16 @@ public class HouseOwnerClientController {
     public void createHouseOwner(@RequestBody HouseOwnerVO houseOwnerVO)
     {
         String message = "Request to create houseOwner: " + houseOwnerVO;
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
         Object response = restTemplate2.postForObject("http://owner-service/house-owners/", houseOwnerVO, Object.class);
         System.out.println("Response Received as " + response);
-
-        //return response;
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteHouseOwner(@PathVariable long id) {
         String message = "Request to delete houseOwner with id = " + id;
         sendMessage(message);
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
@@ -102,7 +98,6 @@ public class HouseOwnerClientController {
     @PutMapping("/{id}")
     public void updateHouseOwner(@RequestBody HouseOwnerVO houseOwnerVO, @PathVariable long id) {
         String message = "Request to update houseOwner with id = " + id+ ", body:" + houseOwnerVO;
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
         sendMessage(message);
 
         Map<String, Long> params = new HashMap<String, Long>();
@@ -115,10 +110,4 @@ public class HouseOwnerClientController {
             throw new ItemNotFoundException("HouseOwner with id=" + id + " doesn't exist");
         }
     }
-
-//    @Bean
-//    @LoadBalanced
-//    private RestTemplate restTemplate2() {
-//        return new RestTemplate();
-//    }
 }

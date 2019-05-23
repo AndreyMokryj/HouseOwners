@@ -54,7 +54,6 @@ public class PersonController {
     public Person retrievePerson(@PathVariable long id) {
         try {
             Optional<Person> person = personRepository.findById(id);
-
             return person.get();
         }
         catch (NoSuchElementException ex){
@@ -64,9 +63,7 @@ public class PersonController {
 
     @PostMapping("/")
     public ResponseEntity<Object> createPerson(@RequestBody PersonVO personVO) {
-
         Person person = Person.fromVO(personVO);
-
         Person savedPerson = personRepository.save(person);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -100,7 +97,6 @@ public class PersonController {
 
             Person person = Person.fromVO(personVO);
             person.setId(id);
-
             personRepository.save(person);
 
             String message = "Person updated: " + person;

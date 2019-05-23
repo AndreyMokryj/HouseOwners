@@ -42,22 +42,9 @@ public class RegionController {
 
     private Log log2 = new Log();
 
-//    public void receiveMessage(String message) {
-//        System.out.println("Received <" + message + ">");
-//        latch.countDown();
-//    }
-
-//    @RabbitListener(queues = RabbitApp.QUEUE_GENERIC_NAME)
-//    public void receiveMessage(final Message message) {
-//        log.info("Received message as generic: {}", message.toString());
-//    }
-
     @RabbitListener(queues = RabbitConfiguration.QUEUE_SPECIFIC_NAME)
     public void receiveMessage(final CustomMessage customMessage) {
         log.info("Received message as specific class: {}", customMessage.toString());
-//        Log log1 = new Log();
-//        log1.setText(customMessage.toString());
-//        logRepository.save(log1);
         writeLog(customMessage.toString());
     }
 
@@ -75,9 +62,6 @@ public class RegionController {
     public Region retrieveRegion(@PathVariable long id) throws ItemNotFoundException {
         try {
             Optional<Region> region = regionRepository.findById(id);
-
-//            if(city.get() == null)
-//                throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
             return region.get();
         }
         catch (NoSuchElementException ex){
@@ -90,14 +74,12 @@ public class RegionController {
     public ResponseEntity<Object> createRegion(@RequestBody RegionVO regionVO) {
 
         Region region = Region.fromVO(regionVO);
-        //logRepository.save(log2);
         Region savedRegion = regionRepository.save(region);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedRegion.getId()).toUri();
 
         String message = "Region created: " + savedRegion;
-
         writeLog(message);
         return ResponseEntity.created(location).build();
     }
@@ -106,7 +88,6 @@ public class RegionController {
     public void deleteRegion(@PathVariable long id) {
         try {
             regionRepository.deleteById(id);
-
             String message = "Region with id = " + id + " deleted";
             writeLog(message);
 
@@ -139,7 +120,6 @@ public class RegionController {
             writeLog(message);
             throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
         }
-
     }
 
     public void writeLog(String message){

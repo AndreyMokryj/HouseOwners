@@ -73,19 +73,15 @@ public class CityClientController {
     {
         String message = "Request to create city: " + city;
         sendMessage(message);
-//        rabbitTemplate.convertAndSend(Application.topicExchangeName, "foo.bar.baz", message);
 
         Object response = restTemplate.postForObject("http://city-service/cities/", city, Object.class);
         System.out.println("Response Received as " + response);
-
-        //return response;
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteCity(@PathVariable long id) {
         String message = "Request to delete city with id = " + id;
         sendMessage(message);
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
@@ -102,7 +98,6 @@ public class CityClientController {
     public void updateCity(@RequestBody CityVO city, @PathVariable long id) {
         String message = "Request to update city with id = " + id+ ", body:" + city;
         sendMessage(message);
-        //rabbitTemplate.convertAndSend(Application.EXCHANGE_NAME, "foo.bar.baz", message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
