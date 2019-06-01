@@ -1,11 +1,9 @@
-package app.client;
+package app.client.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
@@ -13,26 +11,22 @@ import org.springframework.web.client.RestTemplate;
 import rabbit.RabbitApp;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
-import vo.HouseVO;
+import vo.PersonVO;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 @RestController
-@RequestMapping(path="/houses")
-public class HouseClientController {
+@RequestMapping(path="/people")
+public class PersonClientController {
     @Autowired
-    RestTemplate restTemplate1;
+    RestTemplate restTemplate3;
 
     //Rabbit send
-    private static final Logger log = LoggerFactory.getLogger(HouseClientController.class);
+    private static final Logger log = LoggerFactory.getLogger(PersonClientController.class);
 
     private final RabbitTemplate rabbitTemplate;
-
-    public HouseClientController(RabbitTemplate rabbitTemplate) {
-        this.rabbitTemplate = rabbitTemplate;
-    }
 
     public void sendMessage(String x) {
         final CustomMessage message = new CustomMessage(x, new Random().nextInt(50), false);
@@ -40,10 +34,14 @@ public class HouseClientController {
         rabbitTemplate.convertAndSend(RabbitApp.EXCHANGE_NAME, RabbitApp.ROUTING_KEY, message);
     }
 
+    public PersonClientController(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
+
     @GetMapping(path = "/")
-    public String getHouses()
+    public String getPeople()
     {
-        String response = restTemplate1.exchange("http://owner-service/houses/",
+        String response = restTemplate3.exchange("http://owner-service/people/",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
 
         System.out.println("Response Received as " + response);
@@ -55,7 +53,7 @@ public class HouseClientController {
     public String getById(@PathVariable long id)
     {
         try {
-            String response = restTemplate1.exchange("http://owner-service/houses/{id}",
+            String response = restTemplate3.exchange("http://owner-service/people/{id}",
                     HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
 
             System.out.println("Response Received as " + response);
@@ -63,49 +61,50 @@ public class HouseClientController {
             return response;
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
+
     }
 
     @PostMapping("/")
-    public void createHouse(@RequestBody HouseVO house)
+    public void createPerson(@RequestBody PersonVO personVO)
     {
-        String message = "Request to create house: " + house;
+        String message = "Request to create person: " + personVO;
         sendMessage(message);
 
-        Object response = restTemplate1.postForObject("http://owner-service/houses/", house, Object.class);
+        Object response = restTemplate3.postForObject("http://owner-service/people/", personVO, Object.class);
         System.out.println("Response Received as " + response);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteHouse(@PathVariable long id) {
-        String message = "Request to delete house with id = " + id;
+    public void deletePerson(@PathVariable long id) {
+        String message = "Request to delete person with id = " + id;
         sendMessage(message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
 
         try {
-            restTemplate1.delete("http://owner-service/houses/delete/{id}", params);
+            restTemplate3.delete("http://owner-service/people/delete/{id}", params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
     }
 
     @PutMapping("/{id}")
-    public void updateHouse(@RequestBody HouseVO house, @PathVariable long id) {
-        String message = "Request to update house with id = " + id+ ", body:" + house;
+    public void updatePerson(@RequestBody PersonVO personVO, @PathVariable long id) {
+        String message = "Request to update person with id = " + id+ ", body:" + personVO;
         sendMessage(message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
 
         try {
-            restTemplate1.put( "http://owner-service/houses/{id}", house, params);
+            restTemplate3.put( "http://owner-service/people/{id}", personVO, params);
         }
         catch (org.springframework.web.client.HttpClientErrorException ex){
-            throw new ItemNotFoundException("House with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
     }
 }

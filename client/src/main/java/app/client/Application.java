@@ -15,6 +15,8 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.AbstractEnvironment;
@@ -32,7 +34,7 @@ import java.util.Map;
 @EnableEurekaClient
 @RestController
 @RequestMapping(path = "/config")
-public class Application {
+public class Application extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -54,121 +56,8 @@ public class Application {
         return mapper.writeValueAsString(props);
     }
 
-    //Rabbit
-//    public static final String topicExchangeName = "spring-boot-exchange";
-//
-//    public static final String queueName = "spring-boot";
-//
-//    public static final String queueSpecificName = "spring-boot-s";
-//
-//    @Bean
-//    Queue queue() {
-//        return new Queue(queueName, false);
-//    }
-//
-//    @Bean
-//    TopicExchange exchange() {
-//        return new TopicExchange(topicExchangeName);
-//    }
-//
-//    @Bean
-//    Binding binding(Queue queue, TopicExchange exchange) {
-//        return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#");
-//    }
-//
-//    @Bean
-//    SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
-//                                             MessageListenerAdapter listenerAdapter) {
-//        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-//        container.setConnectionFactory(connectionFactory);
-//        container.setQueueNames(queueName);
-//        container.setMessageListener(listenerAdapter);
-//        return container;
-//    }
-//
-//    @Bean
-//    MessageListenerAdapter listenerAdapter(CityServiceController receiver) {
-//        return new MessageListenerAdapter(receiver, "receiveMessage");
-//    }
-//
-//    //Custom serializator
-//    @Bean
-//    public TopicExchange appExchange() {
-//        return new TopicExchange("topicExchange");
-//    }
-//
-//    @Bean
-//    public Queue appQueueGeneric() {
-//        return new Queue("qgeneric");
-//    }
-//
-//    @Bean
-//    public Queue appQueueSpecific() {
-//        return new Queue(queueSpecificName);
-//    }
-//
-//    @Bean
-//    public Binding declareBindingGeneric() {
-//        return BindingBuilder.bind(appQueueGeneric()).to(appExchange()).with("key");
-//    }
-//
-//    @Bean
-//    public Binding declareBindingSpecific() {
-//        return BindingBuilder.bind(appQueueSpecific()).to(appExchange()).with("key");
-//    }
-//
-//
-//    @Bean
-//    public RabbitTemplate rabbitTemplate(final ConnectionFactory connectionFactory) {
-//        final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-//        rabbitTemplate.setMessageConverter(producerJackson2MessageConverter());
-//        return rabbitTemplate;
-//    }
-//
-//    @Bean
-//    public Jackson2JsonMessageConverter producerJackson2MessageConverter() {
-//        return new Jackson2JsonMessageConverter();
-//    }
-
-//    public static final String EXCHANGE_NAME = "spring-boot-exchange";
-//    public static final String QUEUE_GENERIC_NAME = "spring-boot";
-//    public static final String QUEUE_SPECIFIC_NAME = "spring-boot-s";
-//    public static final String ROUTING_KEY = "routing-key";
-//
-//    @Bean
-//    public TopicExchange appExchange() {
-//        return new TopicExchange(EXCHANGE_NAME);
-//    }
-//
-//    @Bean
-//    public Queue appQueueGeneric() {
-//        return new Queue(QUEUE_GENERIC_NAME, false);
-//    }
-//
-//    @Bean
-//    public Queue appQueueSpecific() {
-//        return new Queue(QUEUE_SPECIFIC_NAME);
-//    }
-//
-//    @Bean
-//    public Binding declareBindingGeneric() {
-//        return BindingBuilder.bind(appQueueGeneric()).to(appExchange()).with(ROUTING_KEY);
-//    }
-//
-//    @Bean
-//    public Binding declareBindingSpecific() {
-//        return BindingBuilder.bind(appQueueSpecific()).to(appExchange()).with(ROUTING_KEY);
-//    }
-//
-//    @Bean
-//    public RabbitTemplate rabbitTemplate(final ConnectionFactory connectionFactory) {
-//        final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-//        rabbitTemplate.setMessageConverter(producerJackson2MessageConverter());
-//        return rabbitTemplate;
-//    }
-//
-//    @Bean
-//    public Jackson2JsonMessageConverter producerJackson2MessageConverter() {
-//        return new Jackson2JsonMessageConverter();
-//    }
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
+    }
 }

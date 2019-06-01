@@ -1,25 +1,23 @@
-package app.client;
+package app.client.controllers;
 
+import CityJPA.Entities.Region;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 import rabbit.RabbitApp;
-import vo.CityVO;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
 import vo.RegionVO;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 @RestController
 @RequestMapping(path="/regions")
@@ -42,15 +40,29 @@ public class RegionClientController {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    @GetMapping(path = "/")
-    public String getRegions()
-    {
-        String response = restTemplate4.exchange("http://city-service/regions/",
-                HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
+//    @GetMapping(path = "/")
+//    public String getRegions()
+//    {
+//        String response = restTemplate4.exchange("http://city-service/regions/",
+//                HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
+//
+//        System.out.println("Response Received as " + response);
+//
+//        return response;
+//    }
 
-        System.out.println("Response Received as " + response);
-
-        return response;
+    @RequestMapping("/")
+    public ModelAndView getCustomers(){
+        List<Region> response = restTemplate4.exchange("http://city-service/regions/",
+                HttpMethod.GET, null, new ParameterizedTypeReference<List<Region>>() {}).getBody();
+        ModelAndView mav=new ModelAndView("items");
+        mav.addObject("items", response);
+        mav.addObject("type", "regions");
+        ArrayList<String> list = new ArrayList<>();
+        list.add("name");
+        //list.add("email");
+        mav.addObject("list", list);
+        return mav;
     }
 
     @GetMapping("/{id}")

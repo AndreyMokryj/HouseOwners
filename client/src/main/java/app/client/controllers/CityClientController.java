@@ -1,4 +1,4 @@
-package app.client;
+package app.client.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,6 @@ import rabbit.RabbitApp;
 import vo.CityVO;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
-import vo.HouseVO;
 
 import java.util.HashMap;
 import java.util.Map;

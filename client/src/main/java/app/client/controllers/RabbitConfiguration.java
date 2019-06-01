@@ -1,4 +1,4 @@
-package app.client;
+package app.client.controllers;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
