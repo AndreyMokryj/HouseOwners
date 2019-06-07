@@ -1,9 +1,9 @@
-package OwnerJPA.Controllers;
+package UserJPA.Controllers;
 
-import OwnerJPA.Entities.House;
-import OwnerJPA.Entities.Log;
-import OwnerJPA.Repositories.HouseRepository;
-import OwnerJPA.Repositories.LogRepository;
+import UserJPA.Entities.House;
+import UserJPA.Entities.Log;
+import UserJPA.Repositories.HouseRepository;
+import UserJPA.Repositories.LogRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -14,6 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
 import vo.HouseVO;
+
 import java.net.URI;
 import java.util.NoSuchElementException;
 import java.util.Optional;

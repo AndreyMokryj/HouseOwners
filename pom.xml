@@ -16,6 +16,7 @@
         <module>rabbit</module>
         <module>cityService</module>
         <module>ownerService</module>
+        <module>userService</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

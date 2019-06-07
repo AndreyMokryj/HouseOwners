@@ -1,4 +1,4 @@
-package OwnerJPA.Entities;
+package UserJPA.Entities;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;

@@ -1,9 +1,9 @@
-package OwnerJPA.Controllers;
+package UserJPA.Controllers;
 
-import OwnerJPA.Entities.HouseOwner;
-import OwnerJPA.Entities.Log;
-import OwnerJPA.Repositories.HouseOwnerRepository;
-import OwnerJPA.Repositories.LogRepository;
+import UserJPA.Entities.HouseOwner;
+import UserJPA.Entities.Log;
+import UserJPA.Repositories.HouseOwnerRepository;
+import UserJPA.Repositories.LogRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

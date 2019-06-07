@@ -1,6 +1,6 @@
-package OwnerJPA.Repositories;
+package UserJPA.Repositories;
 
-import OwnerJPA.Entities.House;
+import UserJPA.Entities.House;
 import org.springframework.data.repository.CrudRepository;
 
 public interface HouseRepository extends CrudRepository<House, Long> {

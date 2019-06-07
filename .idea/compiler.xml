@@ -12,6 +12,7 @@
         <module name="discovery" />
         <module name="ownerService" />
         <module name="rabbit" />
+        <module name="userService" />
         <module name="vo" />
       </profile>
     </annotationProcessing>
@@ -23,6 +24,7 @@
       <module name="eureka" target="1.8" />
       <module name="ownerService" target="1.8" />
       <module name="rabbit" target="1.8" />
+      <module name="userService" target="1.8" />
       <module name="vo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -34,6 +36,7 @@
       <module name="discovery" options="-parameters" />
       <module name="ownerService" options="-parameters" />
       <module name="rabbit" options="-parameters" />
+      <module name="userService" options="-parameters" />
       <module name="vo" options="-parameters" />
     </option>
   </component>

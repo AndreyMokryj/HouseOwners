@@ -1,9 +1,10 @@
-package OwnerJPA.Entities;
+package UserJPA.Entities;
 
-import OwnerJPA.Repositories.HouseOwnerRepository;
+import UserJPA.Repositories.HouseOwnerRepository;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import vo.HouseOwnerVO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
