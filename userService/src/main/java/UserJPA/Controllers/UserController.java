@@ -1,18 +1,17 @@
 package UserJPA.Controllers;
 
 import UserJPA.Entities.Log;
-import UserJPA.Entities.User;
+import UserJPA.Entities.UserE;
+import UserJPA.Entities.UserVO;
 import UserJPA.Repositories.LogRepository;
 import UserJPA.Repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
-import vo.UserVO;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -43,9 +42,9 @@ public class UserController {
     }
 
     @GetMapping(path = "/findByUP")
-    public User getUserByUP(@RequestBody UserVO userVO) {
+    public UserE getUserByUP(@RequestBody UserVO userVO) {
         try {
-            Optional<User> userOptional = userRepository.findByUP(userVO.getUsername(), userVO.getPassword());
+            Optional<UserE> userOptional = userRepository.findByUP(userVO.getUsername(), userVO.getPassword());
             return userOptional.get();
         }
         catch (NoSuchElementException ex){
