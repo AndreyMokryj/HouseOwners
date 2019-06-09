@@ -8,7 +8,7 @@ import javax.persistence.Id;
 //@Where(clause = "deleted = 0")
 //@SQLDelete(sql = "update regions set deleted = 1 where id = ?")
 @Entity(name = "users")
-public class User {
+public class UserE {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;

@@ -1,47 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7d74798-5fce-479c-bd5d-dc2fd92a1c61" name="Default Changelist" comment="user service">
-      <change afterPath="$PROJECT_DIR$/UserService1/UserService1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService1/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/CityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/CityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/RegionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="e7d74798-5fce-479c-bd5d-dc2fd92a1c61" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cityService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cityService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/RoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Controllers/HouseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Controllers/HouseOwnerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Controllers/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/RegionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Controllers/RabbitConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/RabbitConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Controllers/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/House.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/HouseOwner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Region.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/RoleEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/UserE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/UserVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Repositories/HouseOwnerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Repositories/HouseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Repositories/LogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/LogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Repositories/PersonRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/UserJPA/Repositories/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/resources/bootstrap-docker.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/resources/bootstrap-docker.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/userService.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/UserE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/discovery/target/" />
@@ -80,23 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/CityController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/RegionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+            <state relative-caret-position="194">
+              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,67 +69,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/resources/bootstrap-docker.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Log.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Region.java">
+        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/UserE.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/CityRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/LogRepository.java">
+        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/RegionRepository.java">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+            <state relative-caret-position="358">
+              <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
+              <folding>
+                <element signature="e#3894#3895#0" expanded="true" />
+                <element signature="e#3935#3936#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,9 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cityService/src/main/java/CityJPA/Repositories/CityRepository.java" />
-        <option value="$PROJECT_DIR$/cityService/src/main/java/CityJPA/Repositories/RegionRepository.java" />
-        <option value="$PROJECT_DIR$/rabbit/src/main/java/rabbit/RabbitApp.java" />
         <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Repositories/HouseRepository.java" />
         <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Repositories/PersonRepository.java" />
         <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/HouseController.java" />
@@ -269,7 +186,6 @@
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/UserService.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/SecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/UserVO.java" />
         <option value="$PROJECT_DIR$/userService/pom.xml" />
         <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/RabbitConfiguration.java" />
@@ -283,6 +199,10 @@
         <option value="$PROJECT_DIR$/UserService1/src/main/resources/bootstrap.properties" />
         <option value="$PROJECT_DIR$/UserService1/src/main/resources/bootstrap-docker.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/User.java" />
+        <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java" />
+        <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -333,20 +253,57 @@
             <path>
               <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
               <item name="HouseOwnersA" type="462c0819:PsiDirectoryNode" />
-              <item name="cityService" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
               <item name="HouseOwnersA" type="462c0819:PsiDirectoryNode" />
-              <item name="cityService" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
               <item name="HouseOwnersA" type="462c0819:PsiDirectoryNode" />
-              <item name="cityService" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwnersA" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwnersA" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwnersA" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="Configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwnersA" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
@@ -413,6 +370,14 @@
               <item name="UserJPA" type="462c0819:PsiDirectoryNode" />
               <item name="Repositories" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HouseOwnersA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwnersA" type="462c0819:PsiDirectoryNode" />
+              <item name="UserService1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -433,7 +398,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560116606239" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560119739641" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -451,11 +416,11 @@
       <recent name="$PROJECT_DIR$/client/src/main/resources/WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="UserJPA.Repositories" />
+      <recent name="UserJPA.Entities" />
+      <recent name="UserJPA.Controllers" />
       <recent name="app.client.controllers" />
       <recent name="app.client.Configuration" />
-      <recent name="UserJPA.Entities" />
-      <recent name="vo" />
-      <recent name="app.client" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/UserService1/src/main/resources" />
@@ -678,7 +643,7 @@
       <workItem from="1559224311836" duration="327000" />
       <workItem from="1559417435757" duration="4513000" />
       <workItem from="1560009830655" duration="2139000" />
-      <workItem from="1560115308027" duration="1291000" />
+      <workItem from="1560115308027" duration="4356000" />
     </task>
     <task id="LOCAL-00001" summary="added new VO classes">
       <created>1558118755530</created>
@@ -764,11 +729,25 @@
       <option name="project" value="LOCAL" />
       <updated>1559940469180</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="user service">
+      <created>1560116617836</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1560116617836</updated>
+    </task>
+    <task id="LOCAL-00014" summary="userService">
+      <created>1560117725550</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1560117725550</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299328000" />
+    <option name="totallyTimeSpent" value="302393000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -781,9 +760,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="798" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28898427" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28898427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -806,7 +784,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.47308782" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.47308782" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -913,17 +891,14 @@
     <MESSAGE value="added region service" />
     <MESSAGE value="client crud" />
     <MESSAGE value="user service" />
-    <option name="LAST_COMMIT_MESSAGE" value="user service" />
+    <MESSAGE value="userService" />
+    <option name="LAST_COMMIT_MESSAGE" value="userService" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/Role.java" />
-    <entry file="file://$PROJECT_DIR$/vo/src/main/java/vo/RoleEnum.java" />
-    <entry file="file://$PROJECT_DIR$/vo/src/main/java/vo/UserVO.java" />
-    <entry file="file://$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/RoleEnum.java" />
     <entry file="file://$PROJECT_DIR$/vo/src/main/java/vo/Exceptions/ItemNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -993,16 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1041,28 +1006,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
-          <folding>
-            <element signature="e#3894#3895#0" expanded="true" />
-            <element signature="e#3935#3936#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/UserVO.java" />
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-683">
-          <caret line="56" column="99" selection-start-line="56" selection-start-column="99" selection-end-line="56" selection-end-column="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userService/src/main/java/UserJPA/Controllers/UserController.java" />
     <entry file="file://$PROJECT_DIR$/userService/src/main/java/UserJPA/Controllers/HouseController.java" />
     <entry file="file://$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/UserE.java" />
@@ -1084,16 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1187,20 +1121,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/RegionController.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/resources/bootstrap.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" selection-start-column="37" selection-end-column="37" />
+        <state relative-caret-position="150">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1211,10 +1135,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="-24">
+          <caret line="56" column="99" selection-start-line="56" selection-start-column="99" selection-end-line="56" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Repositories/HouseOwnerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/RegionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-53">
+          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/UserE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" selection-start-column="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
+          <folding>
+            <element signature="e#3894#3895#0" expanded="true" />
+            <element signature="e#3935#3936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

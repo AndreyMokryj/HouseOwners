@@ -1,7 +1,7 @@
 package UserJPA.Controllers;
 
 import UserJPA.Entities.Log;
-import UserJPA.Entities.User;
+import UserJPA.Entities.UserE;
 import UserJPA.Repositories.LogRepository;
 import UserJPA.Repositories.UserRepository;
 import org.slf4j.Logger;
@@ -49,9 +49,9 @@ public class UserController {
     }
 
     @GetMapping(path = "/getByUN/{username}")
-    public User retrieveUser(@PathVariable String username) throws ItemNotFoundException {
+    public UserE retrieveUser(@PathVariable String username) throws ItemNotFoundException {
         try {
-            Optional<User> user = userRepository.findByUN(username);
+            Optional<UserE> user = userRepository.findByUN(username);
             return user.get();
         }
         catch (NoSuchElementException ex){
