@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/UserService1/UserService1.iml" filepath="$PROJECT_DIR$/UserService1/UserService1.iml" />
       <module fileurl="file://$PROJECT_DIR$/cityService/cityService.iml" filepath="$PROJECT_DIR$/cityService/cityService.iml" />
       <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
@@ -9,7 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/eureka.iml" filepath="$PROJECT_DIR$/eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/ownerService/ownerService.iml" filepath="$PROJECT_DIR$/ownerService/ownerService.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbit/rabbit.iml" filepath="$PROJECT_DIR$/rabbit/rabbit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/userService/userService.iml" filepath="$PROJECT_DIR$/userService/userService.iml" />
       <module fileurl="file://$PROJECT_DIR$/vo/vo.iml" filepath="$PROJECT_DIR$/vo/vo.iml" />
     </modules>
   </component>

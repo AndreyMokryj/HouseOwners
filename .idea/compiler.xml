@@ -12,7 +12,7 @@
         <module name="discovery" />
         <module name="ownerService" />
         <module name="rabbit" />
-        <module name="userService" />
+        <module name="UserService1" />
         <module name="vo" />
       </profile>
     </annotationProcessing>
@@ -25,11 +25,13 @@
       <module name="ownerService" target="1.8" />
       <module name="rabbit" target="1.8" />
       <module name="userService" target="1.8" />
+      <module name="UserService1" target="1.8" />
       <module name="vo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="UserService1" options="-parameters" />
       <module name="cityService" options="-parameters" />
       <module name="client" options="-parameters" />
       <module name="config" options="-parameters" />

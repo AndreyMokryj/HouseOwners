@@ -2,12 +2,14 @@
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserService1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cityService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discovery" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ownerService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rabbit" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/userService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/userService" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vo" charset="UTF-8" />
   </component>
