@@ -1,21 +1,24 @@
 package UserJPA.Controllers;
 
 import UserJPA.Entities.Log;
+import UserJPA.Entities.Role;
 import UserJPA.Entities.UserE;
 import UserJPA.Repositories.LogRepository;
+import UserJPA.Repositories.RoleRepository;
 import UserJPA.Repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
+import vo.UserVO;
 
+import java.net.URI;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
@@ -30,6 +33,9 @@ public class UserController {
 
     @Autowired
     private LogRepository logRepository;
+
+    @Autowired
+    private RoleRepository roleRepository;
 
     //Rabbit receive
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
@@ -57,20 +63,28 @@ public class UserController {
         catch (NoSuchElementException ex){
             throw new ItemNotFoundException("User with username=" + username + " doesn't exist");
         }
-
     }
 
     @GetMapping(path = "/getRoles/{username}")
     public Iterable<String> retrieveUserRoles(@PathVariable String username) throws ItemNotFoundException {
-//        try {
-//            Optional<UserE> user = userRepository.findByUN(username);
-//            return user.get();
-//        }
-//        catch (NoSuchElementException ex){
-//            throw new ItemNotFoundException("User with username=" + username + " doesn't exist");
-//        }
-
         return userRepository.findRolesByUN(username);
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<Object> createRegion(@RequestBody UserVO userVO) {
+        UserE user = UserE.fromVO(userVO);
+        UserE savedUser = userRepository.save(user);
+
+        roleRepository.save(new Role(user.getUsername(), "ROLE_USER"));
+        if(userVO.getIsadmin())
+            roleRepository.save(new Role(user.getUsername(), "ROLE_ADMIN"));
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(savedUser.getId()).toUri();
+
+        String message = "User created: " + savedUser;
+        writeLog(message);
+        return ResponseEntity.created(location).build();
     }
 
     public void writeLog(String message){

@@ -1,5 +1,7 @@
 package UserJPA.Entities;
 
+import vo.UserVO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,14 +41,15 @@ public class UserE {
         this.password = name;
     }
 
-//    public static User fromVO(RegionVO regionVO){
-//        User region = new User();
-//        region.setName(regionVO.getName());
-//        return region;
-//    }
-//
-//    public String toString(){
-//        String x  = "{id: " + getId() + ", name: " + getName() + "}";
-//        return x;
-//    }
+    public static UserE fromVO(UserVO userVO){
+        UserE user = new UserE();
+        user.setUsername(userVO.getUsername());
+        user.setPassword(userVO.getPassword());
+        return user;
+    }
+
+    public String toString(){
+        String x  = "{id: " + getId() + ", username: " + getUsername() + ", password: " + getPassword() + "}";
+        return x;
+    }
 }

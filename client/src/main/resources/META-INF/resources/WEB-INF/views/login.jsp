@@ -25,7 +25,7 @@
                 <br>
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-                <a href="/registration" class="btn btn-lg btn-link btn-block" >Sign in</a>
+                <a href="/signup" class="btn btn-lg btn-link btn-block" >Sign up</a>
             </div>
 
         </form>
