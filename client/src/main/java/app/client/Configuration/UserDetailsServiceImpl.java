@@ -26,8 +26,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Iterable<String> roles =  externalRestTemplate.exchange("http://user-service/users/getRoles/{username}",
+                HttpMethod.GET, null, new ParameterizedTypeReference<Iterable<String>>() {}, username).getBody();
         List<GrantedAuthority> grantList = new ArrayList<>();
-        grantList.add(new SimpleGrantedAuthority("ROLE_USER"));
+
+        for (String role:
+             roles) {
+            grantList.add(new SimpleGrantedAuthority(role));
+        }
+        //grantList.add(new SimpleGrantedAuthority("ROLE_USER"));
 
         UserE userE = externalRestTemplate.exchange("http://user-service/users/getByUN/{username}",
                 HttpMethod.GET, null, new ParameterizedTypeReference<UserE>() {}, username).getBody();
@@ -35,7 +42,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserDetails userDetails = (UserDetails) new User(userE.getUsername(),
                     userE.getPassword(),
                     grantList);
-            return userDetails;
+        return userDetails;
     }
 
     @Primary

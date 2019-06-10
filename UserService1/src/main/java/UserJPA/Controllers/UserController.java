@@ -60,6 +60,19 @@ public class UserController {
 
     }
 
+    @GetMapping(path = "/getRoles/{username}")
+    public Iterable<String> retrieveUserRoles(@PathVariable String username) throws ItemNotFoundException {
+//        try {
+//            Optional<UserE> user = userRepository.findByUN(username);
+//            return user.get();
+//        }
+//        catch (NoSuchElementException ex){
+//            throw new ItemNotFoundException("User with username=" + username + " doesn't exist");
+//        }
+
+        return userRepository.findRolesByUN(username);
+    }
+
     public void writeLog(String message){
         Log log = new Log();
         log.setText(message);

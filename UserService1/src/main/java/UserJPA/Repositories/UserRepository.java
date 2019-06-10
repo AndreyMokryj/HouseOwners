@@ -13,4 +13,9 @@ public interface UserRepository extends CrudRepository<UserE, Long> {
 //    @Modifying
     @Transactional
     public Optional<UserE> findByUN(@PathVariable String un);
+
+    @Query("SELECT role FROM user_roles r where username = :un")
+//    @Modifying
+    @Transactional
+    public Iterable<String> findRolesByUN(@PathVariable String un);
 }
