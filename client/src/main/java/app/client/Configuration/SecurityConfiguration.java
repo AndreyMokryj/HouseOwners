@@ -39,19 +39,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/resources/**");
     }
 
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("user").password("{noop}password").roles("USER")
-//                .and()
-//                .withUser("admin").password("{noop}password").roles("USER", "ADMIN");
-//
-//
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/login","/signup")
+        http.authorizeRequests()
+                .antMatchers("/users/**").hasRole("ADMIN")
+                .antMatchers("/login","/signup")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
