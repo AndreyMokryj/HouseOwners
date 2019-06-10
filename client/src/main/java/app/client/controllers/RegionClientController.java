@@ -7,7 +7,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -66,15 +65,24 @@ public class RegionClientController {
     }
 
     @GetMapping("/{id}")
-    public String getById(@PathVariable long id)
+    public ModelAndView getById(@PathVariable long id)
     {
+        ModelAndView mav=new ModelAndView("item");
+
         try {
-            String response = restTemplate4.exchange("http://city-service/regions/{id}",
-                    HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
+            Region response = restTemplate4.exchange("http://city-service/regions/{id}",
+                    HttpMethod.GET, null, new ParameterizedTypeReference<Region>() {}, id).getBody();
 
             System.out.println("Response Received as " + response);
+            mav.addObject("item",response);
+            mav.addObject("type", "regions");
 
-            return response;
+            Map<String, String> map = new HashMap<>();
+            map.put("name", response.getName());
+            //map.put("email", customer.get().getEmail());
+            mav.addObject("map", map);
+
+            return mav;
         }
         catch (HttpClientErrorException ex){
             throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");

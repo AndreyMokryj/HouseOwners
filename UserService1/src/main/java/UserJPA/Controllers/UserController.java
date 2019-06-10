@@ -70,8 +70,27 @@ public class UserController {
         return userRepository.findRolesByUN(username);
     }
 
+    @GetMapping(path="/")
+    public @ResponseBody
+    Iterable<UserE> getAll() {
+        // This returns a JSON or XML with the users
+        return userRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public UserE retrieveUser(@PathVariable long id) throws ItemNotFoundException {
+        try {
+            Optional<UserE> userE = userRepository.findById(id);
+            return userE.get();
+        }
+        catch (NoSuchElementException ex){
+            throw new ItemNotFoundException("User with id=" + id + " doesn't exist");
+        }
+
+    }
+
     @PostMapping("/")
-    public ResponseEntity<Object> createRegion(@RequestBody UserVO userVO) {
+    public ResponseEntity<Object> createUser(@RequestBody UserVO userVO) {
         UserE user = UserE.fromVO(userVO);
         UserE savedUser = userRepository.save(user);
 
@@ -85,6 +104,48 @@ public class UserController {
         String message = "User created: " + savedUser;
         writeLog(message);
         return ResponseEntity.created(location).build();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteUser(@PathVariable long id) {
+        try {
+            userRepository.deleteById(id);
+            String message = "User with id = " + id + " deleted";
+            writeLog(message);
+
+        }
+        catch (org.springframework.dao.EmptyResultDataAccessException ex){
+            String message = "User with id = " + id + " does not exist";
+            writeLog(message);
+            throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
+        }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateUser(@RequestBody UserVO userVO, @PathVariable Long id) {
+        try {
+            Optional<UserE> userOptional = userRepository.findById(id);
+            userRepository.deleteById(id);
+
+            if (userOptional.get() == null) ;
+
+            UserE user = UserE.fromVO(userVO);
+            user.setId(id);
+            userRepository.save(user);
+
+            roleRepository.save(new Role(user.getUsername(), "ROLE_USER"));
+            if(userVO.getIsadmin())
+                roleRepository.save(new Role(user.getUsername(), "ROLE_ADMIN"));
+            String message = "User updated: " + user;
+
+            writeLog(message);
+            return ResponseEntity.noContent().build();
+        }
+        catch (NoSuchElementException ex){
+            String message = "Region with id = " + id + " does not exist";
+            writeLog(message);
+            throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
+        }
     }
 
     public void writeLog(String message){
