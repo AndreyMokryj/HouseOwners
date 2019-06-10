@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7d74798-5fce-479c-bd5d-dc2fd92a1c61" name="Default Changelist" comment="">
+    <list default="true" id="e7d74798-5fce-479c-bd5d-dc2fd92a1c61" name="Default Changelist" comment="client region crud">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/UserClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HomeController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/discovery/target/" />
@@ -43,22 +44,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/LoginController.java">
+        <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="210">
+              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -85,14 +87,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
+            <state relative-caret-position="179">
+              <caret line="146" column="29" lean-forward="true" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/UserClientController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -181,8 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/main/java/app/client/HomeController.java" />
-        <option value="$PROJECT_DIR$/client/src/main/resources/bootstrap.properties" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/MvcConfig.java" />
         <option value="$PROJECT_DIR$/userService/src/main/resources/bootstrap.properties" />
         <option value="$PROJECT_DIR$/userService/src/main/resources/bootstrap-docker.properties" />
@@ -227,11 +245,13 @@
         <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/UserE.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/client/pom.xml" />
-        <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp" />
         <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java" />
         <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/items.jsp" />
         <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/item.jsp" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/UserClientController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp" />
+        <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HomeController.java" />
       </list>
     </option>
   </component>
@@ -340,6 +360,61 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
+              <item name="UserService1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
+              <item name="UserService1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
+              <item name="UserService1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
+              <item name="UserService1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
+              <item name="UserService1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="UserJPA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
+              <item name="UserService1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="UserJPA" type="462c0819:PsiDirectoryNode" />
+              <item name="Entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
+              <item name="UserService1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="UserJPA" type="462c0819:PsiDirectoryNode" />
+              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -372,25 +447,25 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/main/WEB-INF" />
-      <recent name="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/views/views" />
-      <recent name="$PROJECT_DIR$/client/src/main/META-INF/resources/WEB-INF/views" />
-      <recent name="$PROJECT_DIR$/client/src/main/resources/WEB-INF" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="UserJPA.Repositories" />
-      <recent name="UserJPA.Entities" />
-      <recent name="UserJPA.Controllers" />
-      <recent name="app.client.controllers" />
-      <recent name="app.client.Configuration" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views" />
       <recent name="$PROJECT_DIR$/UserService1/src/main/resources" />
       <recent name="$PROJECT_DIR$/UserService1/src/main/java/UserJPA" />
       <recent name="$PROJECT_DIR$/userService/src/main/java" />
       <recent name="$PROJECT_DIR$/client/src/main/java/app/client" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.client.controllers" />
+      <recent name="UserJPA.Repositories" />
+      <recent name="UserJPA.Entities" />
+      <recent name="UserJPA.Controllers" />
+      <recent name="app.client.Configuration" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/main/WEB-INF" />
+      <recent name="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/views/views" />
+      <recent name="$PROJECT_DIR$/client/src/main/META-INF/resources/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/client/src/main/resources/WEB-INF" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -607,7 +682,7 @@
       <workItem from="1559417435757" duration="4513000" />
       <workItem from="1560009830655" duration="2139000" />
       <workItem from="1560115308027" duration="17477000" />
-      <workItem from="1560193522145" duration="5684000" />
+      <workItem from="1560193522145" duration="7583000" />
     </task>
     <task id="LOCAL-00001" summary="added new VO classes">
       <created>1558118755530</created>
@@ -756,11 +831,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560198356180</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="client region crud">
+      <created>1560200871021</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1560200871021</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321198000" />
+    <option name="totallyTimeSpent" value="323097000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,7 +855,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="798" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2932761" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -912,28 +993,14 @@
     <MESSAGE value="login with roles" />
     <MESSAGE value="registration works" />
     <MESSAGE value="client get regions" />
-    <option name="LAST_COMMIT_MESSAGE" value="client get regions" />
+    <MESSAGE value="client region crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="client region crud" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/bootstrap.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Role.java" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/User.java" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/UserService.java" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/RoleService.java" />
@@ -1158,16 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/items.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -1212,11 +1269,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
+        <state relative-caret-position="179">
+          <caret line="146" column="29" lean-forward="true" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/UserClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
         </state>
       </provider>
     </entry>
