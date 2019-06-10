@@ -2,6 +2,7 @@ package app.client.Configuration;
 
 import UserJPA.Entities.UserE;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.ParameterizedTypeReference;
@@ -35,27 +36,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                     userE.getPassword(),
                     grantList);
             return userDetails;
-
-//        try {
-//            URL url = new URL("http://localhost:4443/users/getByUN/"+username);
-//            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//            con.setRequestMethod("GET");
-//
-//            UserE userE = (UserE) con.getContent();
-//            UserDetails userDetails = (UserDetails) new User(userE.getUsername(),
-//                    userE.getPassword(),
-//                    grantList);
-//            return userDetails;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-
-//        UserDetails userDetails = (UserDetails) new User("aaa",
-//                "aaa", grantList);
-//        return null;
     }
+
     @Primary
+    @LoadBalanced
     @Bean
     private RestTemplate externalRestTemplate(){
         return new RestTemplate();
