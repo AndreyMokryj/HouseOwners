@@ -51,7 +51,7 @@ public class RegionClientController {
 //    }
 
     @RequestMapping("/")
-    public ModelAndView getCustomers(){
+    public ModelAndView getRegions(){
         List<Region> response = restTemplate4.exchange("http://city-service/regions/",
                 HttpMethod.GET, null, new ParameterizedTypeReference<List<Region>>() {}).getBody();
         ModelAndView mav=new ModelAndView("items");
@@ -90,18 +90,34 @@ public class RegionClientController {
 
     }
 
+//    @PostMapping("/")
+//    public void createRegion(@RequestBody RegionVO regionVO)
+//    {
+//        String message = "Request to create region: " + regionVO;
+//        sendMessage(message);
+//
+//        Object response = restTemplate4.postForObject("http://city-service/regions/", regionVO, Object.class);
+//        System.out.println("Response Received as " + response);
+//    }
+
     @PostMapping("/")
-    public void createRegion(@RequestBody RegionVO regionVO)
-    {
+    public ModelAndView createRegion(@RequestParam(value = "name") String name) {
+        RegionVO regionVO = new RegionVO();
+        regionVO.setName(name);
+
         String message = "Request to create region: " + regionVO;
         sendMessage(message);
 
         Object response = restTemplate4.postForObject("http://city-service/regions/", regionVO, Object.class);
         System.out.println("Response Received as " + response);
+
+        ModelAndView mav = getRegions();
+        mav.addObject("message","Region added successfully!");
+        return mav;
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void deleteRegion(@PathVariable long id) {
+    @GetMapping("/delete/{id}")
+    public ModelAndView deleteRegion(@PathVariable long id) {
         String message = "Request to delete region with id = " + id;
         sendMessage(message);
 
@@ -114,10 +130,16 @@ public class RegionClientController {
         catch (org.springframework.web.client.HttpClientErrorException ex){
             throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
         }
+        ModelAndView mav = getRegions();
+        mav.addObject("message", "Region deleted successfully!");
+        return mav;
     }
 
-    @PutMapping("/{id}")
-    public void updateRegion(@RequestBody RegionVO regionVO, @PathVariable long id) {
+    @PostMapping("/update/{id}")
+    public ModelAndView updateRegion(@RequestParam(value = "name") String name, @PathVariable long id) {
+        RegionVO regionVO = new RegionVO();
+        regionVO.setName(name);
+
         String message = "Request to update region with id = " + id+ ", body:" + regionVO;
         sendMessage(message);
 
@@ -130,5 +152,9 @@ public class RegionClientController {
         catch (org.springframework.web.client.HttpClientErrorException ex){
             throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
         }
+
+        ModelAndView mav = getRegions();
+        mav.addObject("message", "Region updated successfully!");
+        return mav;
     }
 }
