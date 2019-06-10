@@ -16,7 +16,7 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/exit")
+    @RequestMapping("/logout")
     public void exit(HttpServletRequest request, HttpServletResponse response) {
         new SecurityContextLogoutHandler().logout(request, null, null);
         try {

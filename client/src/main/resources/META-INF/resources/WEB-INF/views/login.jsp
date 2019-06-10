@@ -16,11 +16,11 @@
             <h2 class="form-heading">Log in</h2>
 
             <div class="form-group ${error != null ? 'has-error' : null}">
-                <span style="margin-bottom: 10px">${msg}</span>
+                <span style="margin-bottom: 10px">${msg}</span><br>
                 <input name="username" type="text" class="form-control" placeholder="Username"
                        autofocus="true"/>
                 <br>
-                <input name="password" type="password" class="form-control" placeholder="Password"/>
+                <input name="password" type="password" class="form-control" placeholder="Password"/><br>
                 <span style="margin-top: 10px">${errorMsg}</span>
                 <br>
 

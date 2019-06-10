@@ -1,6 +1,5 @@
 package app.client.controllers;
 
-import CityJPA.Entities.Region;
 import UserJPA.Entities.UserE;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import rabbit.RabbitApp;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
-import vo.RegionVO;
+import vo.UserVO;
 
 import java.util.*;
 
@@ -50,6 +49,7 @@ public class UserClientController {
         ArrayList<String> list = new ArrayList<>();
         list.add("username");
         list.add("password");
+        list.add("isadmin");
         //list.add("email");
         mav.addObject("list", list);
         return mav;
@@ -61,15 +61,18 @@ public class UserClientController {
         ModelAndView mav=new ModelAndView("item");
 
         try {
-            Region response = restTemplate5.exchange("http://city-service/regions/{id}",
-                    HttpMethod.GET, null, new ParameterizedTypeReference<Region>() {}, id).getBody();
+            UserE response = restTemplate5.exchange("http://user-service/users/{id}",
+                    HttpMethod.GET, null, new ParameterizedTypeReference<UserE>() {}, id).getBody();
 
             System.out.println("Response Received as " + response);
             mav.addObject("item",response);
-            mav.addObject("type", "regions");
+            mav.addObject("type", "users");
 
             Map<String, String> map = new HashMap<>();
-            map.put("name", response.getName());
+            map.put("username", response.getUsername());
+            map.put("isadmin", (response.getIsadmin())?"1":"0");
+            map.put("password", response.getPassword());
+
             //map.put("email", customer.get().getEmail());
             mav.addObject("map", map);
 
@@ -92,60 +95,66 @@ public class UserClientController {
 //    }
 
     @PostMapping("/")
-    public ModelAndView createRegion(@RequestParam(value = "name") String name) {
-        RegionVO regionVO = new RegionVO();
-        regionVO.setName(name);
+    public ModelAndView createUser(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password, @RequestParam(value = "isadmin") int isadmin) {
+        UserVO userVO = new UserVO();
+        userVO.setUsername(username);
+        userVO.setPassword(password);
+        userVO.setIsadmin(isadmin > 0);
 
-        String message = "Request to create region: " + regionVO;
+        String message = "Request to create user: " + userVO;
         sendMessage(message);
 
-        Object response = restTemplate5.postForObject("http://city-service/regions/", regionVO, Object.class);
+        Object response = restTemplate5.postForObject("http://user-service/users/", userVO, Object.class);
         System.out.println("Response Received as " + response);
 
         ModelAndView mav = getUsers();
-        mav.addObject("message","Region added successfully!");
+        mav.addObject("message","User added successfully!");
         return mav;
     }
 
     @GetMapping("/delete/{id}")
     public ModelAndView deleteRegion(@PathVariable long id) {
-        String message = "Request to delete region with id = " + id;
+        String message = "Request to delete user with id = " + id;
         sendMessage(message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
 
         try {
-            restTemplate5.delete("http://city-service/regions/delete/{id}", params);
+            restTemplate5.delete("http://user-service/users/delete/{id}", params);
         }
         catch (HttpClientErrorException ex){
-            throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("User with id=" + id + " doesn't exist");
         }
         ModelAndView mav = getUsers();
-        mav.addObject("message", "Region deleted successfully!");
+        mav.addObject("message", "User deleted successfully!");
         return mav;
     }
 
     @PostMapping("/update/{id}")
-    public ModelAndView updateRegion(@RequestParam(value = "name") String name, @PathVariable long id) {
-        RegionVO regionVO = new RegionVO();
-        regionVO.setName(name);
+    public ModelAndView updateUser(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password, @RequestParam(value = "isadmin") int isadmin, @PathVariable long id) {
+        UserVO userVO = new UserVO();
+        userVO.setUsername(username);
+        userVO.setPassword(password);
+        userVO.setIsadmin(isadmin > 0);
+        userVO.setId(id);
 
-        String message = "Request to update region with id = " + id+ ", body:" + regionVO;
+
+        String message = "Request to update user with id = " + id+ ", body:" + userVO;
         sendMessage(message);
 
         Map<String, Long> params = new HashMap<String, Long>();
         params.put("id", id);
 
         try {
-            restTemplate5.put( "http://city-service/regions/{id}", regionVO, params);
+            restTemplate5.put( "http://user-service/users/{id}", userVO, params);
         }
         catch (HttpClientErrorException ex){
-            throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("User with id=" + id + " doesn't exist");
         }
 
         ModelAndView mav = getUsers();
-        mav.addObject("message", "Region updated successfully!");
+        mav.addObject("message", "User updated successfully!");
         return mav;
     }
 }

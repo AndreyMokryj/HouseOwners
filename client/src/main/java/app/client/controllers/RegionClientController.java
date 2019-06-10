@@ -39,17 +39,6 @@ public class RegionClientController {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-//    @GetMapping(path = "/")
-//    public String getRegions()
-//    {
-//        String response = restTemplate4.exchange("http://city-service/regions/",
-//                HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
-//
-//        System.out.println("Response Received as " + response);
-//
-//        return response;
-//    }
-
     @RequestMapping("/")
     public ModelAndView getRegions(){
         List<Region> response = restTemplate4.exchange("http://city-service/regions/",
@@ -90,16 +79,6 @@ public class RegionClientController {
 
     }
 
-//    @PostMapping("/")
-//    public void createRegion(@RequestBody RegionVO regionVO)
-//    {
-//        String message = "Request to create region: " + regionVO;
-//        sendMessage(message);
-//
-//        Object response = restTemplate4.postForObject("http://city-service/regions/", regionVO, Object.class);
-//        System.out.println("Response Received as " + response);
-//    }
-
     @PostMapping("/")
     public ModelAndView createRegion(@RequestParam(value = "name") String name) {
         RegionVO regionVO = new RegionVO();
@@ -139,6 +118,7 @@ public class RegionClientController {
     public ModelAndView updateRegion(@RequestParam(value = "name") String name, @PathVariable long id) {
         RegionVO regionVO = new RegionVO();
         regionVO.setName(name);
+        regionVO.setId(id);
 
         String message = "Request to update region with id = " + id+ ", body:" + regionVO;
         sendMessage(message);

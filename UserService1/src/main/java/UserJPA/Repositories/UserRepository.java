@@ -1,6 +1,7 @@
 package UserJPA.Repositories;
 
 import UserJPA.Entities.UserE;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,4 +19,9 @@ public interface UserRepository extends CrudRepository<UserE, Long> {
 //    @Modifying
     @Transactional
     public Iterable<String> findRolesByUN(@PathVariable String un);
+
+    @Query("delete from user_roles where username = :un")
+    @Modifying
+    @Transactional
+    public void deleteRoles(@PathVariable String un);
 }

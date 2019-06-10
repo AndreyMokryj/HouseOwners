@@ -125,7 +125,6 @@ public class UserController {
     public ResponseEntity<Object> updateUser(@RequestBody UserVO userVO, @PathVariable Long id) {
         try {
             Optional<UserE> userOptional = userRepository.findById(id);
-            userRepository.deleteById(id);
 
             if (userOptional.get() == null) ;
 
@@ -133,6 +132,7 @@ public class UserController {
             user.setId(id);
             userRepository.save(user);
 
+            userRepository.deleteRoles(user.getUsername());
             roleRepository.save(new Role(user.getUsername(), "ROLE_USER"));
             if(userVO.getIsadmin())
                 roleRepository.save(new Role(user.getUsername(), "ROLE_ADMIN"));
@@ -142,9 +142,9 @@ public class UserController {
             return ResponseEntity.noContent().build();
         }
         catch (NoSuchElementException ex){
-            String message = "Region with id = " + id + " does not exist";
+            String message = "User with id = " + id + " does not exist";
             writeLog(message);
-            throw new ItemNotFoundException("Region with id=" + id + " doesn't exist");
+            throw new ItemNotFoundException("User with id=" + id + " doesn't exist");
         }
     }
 
