@@ -25,4 +25,9 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+
+    @GetMapping("/error")
+    public String error(){
+        return "error";
+    }
 }

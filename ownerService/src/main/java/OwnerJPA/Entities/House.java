@@ -51,8 +51,12 @@ public class House {
         return house;
     }
 
-    public String toString(){
+    public String toLog(){
         String x = "{id: " + getId() + ", address: " + getAddress() + ", city_id: " + getCity_id() + "}";
         return x;
+    }
+
+    public String toString(){
+        return address;
     }
 }

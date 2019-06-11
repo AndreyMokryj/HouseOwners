@@ -68,7 +68,7 @@ public class HouseController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedHouse.getId()).toUri();
 
-        String message = "House created: " + savedHouse;
+        String message = "House created: " + savedHouse.toLog();
         writeLog(message);
         return ResponseEntity.created(location).build();
     }
@@ -98,7 +98,7 @@ public class HouseController {
             house.setId(id);
             houseRepository.save(house);
 
-            String message = "House updated: " + house;
+            String message = "House updated: " + house.toLog();
             writeLog(message);
             return ResponseEntity.noContent().build();
         }

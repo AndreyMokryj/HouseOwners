@@ -1,6 +1,5 @@
 package CityJPA.Entities;
 
-import CityJPA.Repositories.CityRepository;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import vo.CityVO;
@@ -61,9 +60,12 @@ public class City {
         return city;
     }
 
-    public String toString(){
-        //String x = "{id: " + getId() + ", name: " + getName() + ", population: " + getPopulation() + "}";
+    public String toLog(){
         String x  = "{id: " + getId() + ",name: " + getName() + ", region_id: " + getRegion_id() + ", population: " + getPopulation() + "}";
         return x;
+    }
+
+    public String toString(){
+        return name;
     }
 }

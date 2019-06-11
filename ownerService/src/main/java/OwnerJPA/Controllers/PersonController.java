@@ -69,7 +69,7 @@ public class PersonController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedPerson.getId()).toUri();
 
-        String message = "Person created: " + savedPerson;
+        String message = "Person created: " + savedPerson.toLog();
         writeLog(message);
         return ResponseEntity.created(location).build();
     }
@@ -99,7 +99,7 @@ public class PersonController {
             person.setId(id);
             personRepository.save(person);
 
-            String message = "Person updated: " + person;
+            String message = "Person updated: " + person.toLog();
             writeLog(message);
             return ResponseEntity.noContent().build();
         }

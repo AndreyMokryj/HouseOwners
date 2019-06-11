@@ -37,7 +37,6 @@ public class CityVO {
     }
 
     public String toString(){
-        //String x = "{id: " + getId() + ", name: " + getName() + ", population: " + getPopulation() + "}";
         String x  = "{name: " + getName() + ", region_id: " + getRegion_id() + ", population: " + getPopulation() + "}";
         return x;
     }

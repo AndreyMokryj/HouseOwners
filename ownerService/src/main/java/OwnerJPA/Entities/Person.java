@@ -50,8 +50,12 @@ public class Person {
         return person;
     }
 
-    public String toString(){
+    public String toLog(){
         String x  = "{id: " + getId() + ", name: " + getName() + ", passport: " + getPassport() + "}";
         return x;
+    }
+
+    public String toString(){
+        return name;
     }
 }

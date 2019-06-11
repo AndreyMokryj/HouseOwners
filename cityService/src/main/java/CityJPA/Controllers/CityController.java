@@ -77,7 +77,7 @@ public class CityController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedCity.getId()).toUri();
 
-        String message = "City created: " + savedCity;
+        String message = "City created: " + savedCity.toLog();
 
         writeLog(message);
         return ResponseEntity.created(location).build();
@@ -110,7 +110,7 @@ public class CityController {
             city.setId(id);
 
             cityRepository.save(city);
-            String message = "City updated: " + city;
+            String message = "City updated: " + city.toLog();
             writeLog(message);
             return ResponseEntity.noContent().build();
         }
