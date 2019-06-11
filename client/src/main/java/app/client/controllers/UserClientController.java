@@ -163,7 +163,7 @@ public class UserClientController {
     public ModelAndView getLogs(){
         List<Log> response = restTemplate5.exchange("http://user-service/users/logs",
                 HttpMethod.GET, null, new ParameterizedTypeReference<List<Log>>() {}).getBody();
-        ModelAndView mav=new ModelAndView("items");
+        ModelAndView mav=new ModelAndView("logItems");
         mav.addObject("items", response);
         mav.addObject("type", "logs");
 //        ArrayList<String> list = new ArrayList<>();

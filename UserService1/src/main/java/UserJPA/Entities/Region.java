@@ -40,8 +40,13 @@ public class Region {
         return region;
     }
 
+//    public String toString(){
+//        String x  = "{id: " + getId() + ", name: " + getName() + "}";
+//        return x;
+//    }
+
+    @Override
     public String toString(){
-        String x  = "{id: " + getId() + ", name: " + getName() + "}";
-        return x;
+        return name;
     }
 }

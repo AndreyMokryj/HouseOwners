@@ -1,9 +1,7 @@
 package CityJPA.Controllers;
 
-import CityJPA.Entities.City;
 import CityJPA.Entities.Log;
 import CityJPA.Entities.Region;
-import CityJPA.Repositories.CityRepository;
 import CityJPA.Repositories.LogRepository;
 import CityJPA.Repositories.RegionRepository;
 import org.slf4j.Logger;
@@ -14,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import vo.CityVO;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
 import vo.RegionVO;
@@ -75,11 +72,12 @@ public class RegionController {
 
         Region region = Region.fromVO(regionVO);
         Region savedRegion = regionRepository.save(region);
+        regionVO.setId(savedRegion.getId());
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedRegion.getId()).toUri();
 
-        String message = "Region created: " + savedRegion;
+        String message = "Region created: " + regionVO;
         writeLog(message);
         return ResponseEntity.created(location).build();
     }
@@ -108,9 +106,10 @@ public class RegionController {
 
             Region region = Region.fromVO(regionVO);
             region.setId(id);
+            regionVO.setId(id);
 
             regionRepository.save(region);
-            String message = "Region updated: " + region;
+            String message = "Region updated: " + regionVO;
 
             writeLog(message);
             return ResponseEntity.noContent().build();

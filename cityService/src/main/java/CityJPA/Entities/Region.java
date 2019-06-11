@@ -40,8 +40,12 @@ public class Region {
         return region;
     }
 
-    public String toString(){
-        String x  = "{id: " + getId() + ", name: " + getName() + "}";
-        return x;
+//    public String toString(){
+//        String x  = "{id: " + getId() + ", name: " + getName() + "}";
+//        return x;
+//    }
+
+    public String toString() {
+        return name;
     }
 }

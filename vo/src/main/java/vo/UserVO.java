@@ -35,4 +35,9 @@ public class UserVO {
     public void setIsadmin(boolean isadmin) {
         this.isadmin = isadmin;
     }
+
+    public String toString(){
+        String x  = "{id: " + getId() + ", username: " + getUsername() + ", password: " + getPassword() + ", isadmin: " + getIsadmin() + "}";
+        return x;
+    }
 }

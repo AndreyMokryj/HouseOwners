@@ -21,7 +21,7 @@ public class RegionVO {
     }
 
     public String toString(){
-        String x  = "{name: " + getName() + "}";
+        String x  = "{id: " + getId() + ", name: " + getName() + "}";
         return x;
     }
 }
