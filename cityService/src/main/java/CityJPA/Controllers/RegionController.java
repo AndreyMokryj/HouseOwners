@@ -72,12 +72,11 @@ public class RegionController {
 
         Region region = Region.fromVO(regionVO);
         Region savedRegion = regionRepository.save(region);
-        regionVO.setId(savedRegion.getId());
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedRegion.getId()).toUri();
 
-        String message = "Region created: " + regionVO;
+        String message = "Region created: " + region.toLog();
         writeLog(message);
         return ResponseEntity.created(location).build();
     }
@@ -106,10 +105,9 @@ public class RegionController {
 
             Region region = Region.fromVO(regionVO);
             region.setId(id);
-            regionVO.setId(id);
 
             regionRepository.save(region);
-            String message = "Region updated: " + regionVO;
+            String message = "Region updated: " + region.toLog();
 
             writeLog(message);
             return ResponseEntity.noContent().build();

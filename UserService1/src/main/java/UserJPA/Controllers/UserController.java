@@ -101,7 +101,7 @@ public class UserController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedUser.getId()).toUri();
 
-        String message = "User created: " + savedUser;
+        String message = "User created: " + savedUser.toLog();
         writeLog(message);
         return ResponseEntity.created(location).build();
     }
@@ -136,7 +136,7 @@ public class UserController {
             roleRepository.save(new Role(user.getUsername(), "ROLE_USER"));
             if(userVO.getIsadmin())
                 roleRepository.save(new Role(user.getUsername(), "ROLE_ADMIN"));
-            String message = "User updated: " + user;
+            String message = "User updated: " + user.toLog();
 
             writeLog(message);
             return ResponseEntity.noContent().build();

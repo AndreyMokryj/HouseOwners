@@ -58,8 +58,12 @@ public class UserE {
         return user;
     }
 
-    public String toString(){
+    public String toLog(){
         String x  = "{id: " + getId() + ", username: " + getUsername() + ", password: " + getPassword() + ", isadmin: " + getIsadmin() + "}";
         return x;
+    }
+
+    public String toString(){
+        return username;
     }
 }

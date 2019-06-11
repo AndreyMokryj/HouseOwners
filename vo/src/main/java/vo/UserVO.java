@@ -37,7 +37,7 @@ public class UserVO {
     }
 
     public String toString(){
-        String x  = "{id: " + getId() + ", username: " + getUsername() + ", password: " + getPassword() + ", isadmin: " + getIsadmin() + "}";
+        String x  = "{username: " + getUsername() + ", password: " + getPassword() + ", isadmin: " + getIsadmin() + "}";
         return x;
     }
 }
