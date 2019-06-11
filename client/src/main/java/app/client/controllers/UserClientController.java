@@ -1,5 +1,6 @@
 package app.client.controllers;
 
+import UserJPA.Entities.Log;
 import UserJPA.Entities.UserE;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -157,4 +158,21 @@ public class UserClientController {
         mav.addObject("message", "User updated successfully!");
         return mav;
     }
+
+    @RequestMapping("/logs")
+    public ModelAndView getLogs(){
+        List<Log> response = restTemplate5.exchange("http://user-service/users/logs",
+                HttpMethod.GET, null, new ParameterizedTypeReference<List<Log>>() {}).getBody();
+        ModelAndView mav=new ModelAndView("items");
+        mav.addObject("items", response);
+        mav.addObject("type", "logs");
+//        ArrayList<String> list = new ArrayList<>();
+//        list.add("username");
+//        list.add("password");
+//        list.add("isadmin");
+//        //list.add("email");
+//        mav.addObject("list", list);
+        return mav;
+    }
+
 }

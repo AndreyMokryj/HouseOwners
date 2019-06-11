@@ -31,4 +31,10 @@ public class Log {
 //    public Log(String string){
 //        text = string;
 //    }
+
+
+    @Override
+    public String toString() {
+        return text;
+    }
 }

@@ -148,6 +148,14 @@ public class UserController {
         }
     }
 
+    //Logs
+    @GetMapping(path="/logs")
+    public @ResponseBody
+    Iterable<Log> getLogs() {
+        // This returns a JSON or XML with the users
+        return logRepository.findAll();
+    }
+
     public void writeLog(String message){
         Log log = new Log();
         log.setText(message);
