@@ -43,7 +43,7 @@ public class LoginController {
         userVO.setIsadmin(role.toUpperCase().equals("ADMIN"));
 
         loginRestTemplate.postForObject("http://user-service/users/", userVO, Object.class);
-        return "redirect:/login";
+        return "redirect:/";
     }
 
 

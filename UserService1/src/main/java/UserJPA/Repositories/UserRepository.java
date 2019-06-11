@@ -1,7 +1,6 @@
 package UserJPA.Repositories;
 
 import UserJPA.Entities.UserE;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,13 +14,13 @@ public interface UserRepository extends CrudRepository<UserE, Long> {
     @Transactional
     public Optional<UserE> findByUN(@PathVariable String un);
 
-    @Query("SELECT role FROM user_roles r where username = :un")
+//    @Query("SELECT role FROM user_roles r where username = :un")
+////    @Modifying
+//    @Transactional
+//    public Iterable<String> findRolesByUN(@PathVariable String un);
+//
+//    @Query("delete from user_roles where username = :un")
 //    @Modifying
-    @Transactional
-    public Iterable<String> findRolesByUN(@PathVariable String un);
-
-    @Query("delete from user_roles where username = :un")
-    @Modifying
-    @Transactional
-    public void deleteRoles(@PathVariable String un);
+//    @Transactional
+//    public void deleteRoles(@PathVariable String un);
 }

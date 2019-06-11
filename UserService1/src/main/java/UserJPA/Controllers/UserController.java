@@ -1,10 +1,8 @@
 package UserJPA.Controllers;
 
 import UserJPA.Entities.Log;
-import UserJPA.Entities.Role;
 import UserJPA.Entities.UserE;
 import UserJPA.Repositories.LogRepository;
-import UserJPA.Repositories.RoleRepository;
 import UserJPA.Repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,9 +32,6 @@ public class UserController {
     @Autowired
     private LogRepository logRepository;
 
-    @Autowired
-    private RoleRepository roleRepository;
-
     //Rabbit receive
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
@@ -65,10 +60,10 @@ public class UserController {
         }
     }
 
-    @GetMapping(path = "/getRoles/{username}")
-    public Iterable<String> retrieveUserRoles(@PathVariable String username) throws ItemNotFoundException {
-        return userRepository.findRolesByUN(username);
-    }
+//    @GetMapping(path = "/getRoles/{username}")
+//    public Iterable<String> retrieveUserRoles(@PathVariable String username) throws ItemNotFoundException {
+//        return userRepository.findRolesByUN(username);
+//    }
 
     @GetMapping(path="/")
     public @ResponseBody
@@ -94,9 +89,9 @@ public class UserController {
         UserE user = UserE.fromVO(userVO);
         UserE savedUser = userRepository.save(user);
 
-        roleRepository.save(new Role(user.getUsername(), "ROLE_USER"));
-        if(userVO.getIsadmin())
-            roleRepository.save(new Role(user.getUsername(), "ROLE_ADMIN"));
+//        roleRepository.save(new Role(user.getUsername(), "ROLE_USER"));
+//        if(userVO.getIsadmin())
+//            roleRepository.save(new Role(user.getUsername(), "ROLE_ADMIN"));
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedUser.getId()).toUri();
@@ -132,10 +127,10 @@ public class UserController {
             user.setId(id);
             userRepository.save(user);
 
-            userRepository.deleteRoles(user.getUsername());
-            roleRepository.save(new Role(user.getUsername(), "ROLE_USER"));
-            if(userVO.getIsadmin())
-                roleRepository.save(new Role(user.getUsername(), "ROLE_ADMIN"));
+//            userRepository.deleteRoles(user.getUsername());
+//            roleRepository.save(new Role(user.getUsername(), "ROLE_USER"));
+//            if(userVO.getIsadmin())
+//                roleRepository.save(new Role(user.getUsername(), "ROLE_ADMIN"));
             String message = "User updated: " + user.toLog();
 
             writeLog(message);
