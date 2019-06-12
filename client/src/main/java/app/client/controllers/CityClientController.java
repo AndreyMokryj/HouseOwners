@@ -42,15 +42,6 @@ public class CityClientController {
     }
 
     @GetMapping(path = "/")
-//    public String getCities()
-//    {
-//        String response = restTemplate.exchange("http://city-service/cities/",
-//                HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
-//
-//        System.out.println("Response Received as " + response);
-//
-//        return response;
-//    }
     public ModelAndView getCities(){
         List<City> response = restTemplate.exchange("http://city-service/cities/",
                 HttpMethod.GET, null, new ParameterizedTypeReference<List<City>>() {}).getBody();
@@ -66,21 +57,7 @@ public class CityClientController {
         return mav;
     }
 
-    @GetMapping("/{id}")
-//    public String getById(@PathVariable long id)
-//    {
-//        try {
-//            String response = restTemplate.exchange("http://city-service/cities/{id}",
-//                    HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
-//
-//            System.out.println("Response Received as " + response);
-//
-//            return response;
-//        }
-//        catch (org.springframework.web.client.HttpClientErrorException ex){
-//            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
-//        }
-//    }
+    @GetMapping("/{id}/details")
     public ModelAndView getById(@PathVariable long id)
     {
         ModelAndView mav=new ModelAndView("item");
@@ -110,14 +87,6 @@ public class CityClientController {
 
 
     @PostMapping("/")
-//    public void createCity(@RequestBody CityVO city)
-//    {
-//        String message = "Request to create city: " + city;
-//        sendMessage(message);
-//
-//        Object response = restTemplate.postForObject("http://city-service/cities/", city, Object.class);
-//        System.out.println("Response Received as " + response);
-//    }
     public ModelAndView createCity(@RequestParam(value = "name") String name,
                                    @RequestParam(value = "population") long population,
                                    @RequestParam(value = "region_id") long region_id) {
@@ -137,22 +106,6 @@ public class CityClientController {
         return mav;
     }
 
-//    @DeleteMapping("/delete/{id}")
-//    public void deleteCity(@PathVariable long id) {
-//        String message = "Request to delete city with id = " + id;
-//        sendMessage(message);
-//
-//        Map<String, Long> params = new HashMap<String, Long>();
-//        params.put("id", id);
-//
-//        try {
-//            restTemplate.delete("http://city-service/cities/delete/{id}", params);
-//        }
-//        catch (org.springframework.web.client.HttpClientErrorException ex){
-//            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
-//        }
-//    }
-
     @GetMapping("/delete/{id}")
     public ModelAndView deleteCity(@PathVariable long id) {
         String message = "Request to delete city with id = " + id;
@@ -171,22 +124,6 @@ public class CityClientController {
         mav.addObject("message", "City deleted successfully!");
         return mav;
     }
-
-//    @PutMapping("/{id}")
-//    public void updateCity(@RequestBody CityVO city, @PathVariable long id) {
-//        String message = "Request to update city with id = " + id+ ", body:" + city;
-//        sendMessage(message);
-//
-//        Map<String, Long> params = new HashMap<String, Long>();
-//        params.put("id", id);
-//
-//        try {
-//            restTemplate.put( "http://city-service/cities/{id}", city, params);
-//        }
-//        catch (org.springframework.web.client.HttpClientErrorException ex){
-//            throw new ItemNotFoundException("City with id=" + id + " doesn't exist");
-//        }
-//    }
 
     @PostMapping("/update/{id}")
     public ModelAndView updateCity(@RequestParam(value = "name") String name,

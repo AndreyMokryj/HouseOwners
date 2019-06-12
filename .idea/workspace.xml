@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e7d74798-5fce-479c-bd5d-dc2fd92a1c61" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/RoleRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vo/src/main/java/vo/PersonVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/vo/src/main/java/vo/PersonVO.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/discovery/target/" />
@@ -48,25 +49,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/UserE.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
-              <folding>
-                <element signature="e#938#939#0" expanded="true" />
-                <element signature="e#969#970#0" expanded="true" />
-                <element signature="e#1541#1542#0" expanded="true" />
-                <element signature="e#1565#1566#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+            <state relative-caret-position="269">
+              <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,61 +61,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/LoginController.java">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+            <state relative-caret-position="-548">
+              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/UserClientController.java">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1091">
-              <caret line="165" column="54" lean-forward="true" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
+            <state relative-caret-position="2130">
+              <caret line="144" column="22" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1950">
+              <caret line="148" column="43" lean-forward="true" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java">
+        <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="54" column="69" lean-forward="true" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="43" column="64" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/SecurityConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+            <state relative-caret-position="195">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -188,9 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vo/src/main/java/vo/Exceptions/ErrorDetails.java" />
-        <option value="$PROJECT_DIR$/vo/pom.xml" />
-        <option value="$PROJECT_DIR$/client/src/main/java/app/client/Role.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/UserService.java" />
         <option value="$PROJECT_DIR$/userService/src/main/java/UserJPA/Entities/UserVO.java" />
         <option value="$PROJECT_DIR$/userService/pom.xml" />
@@ -214,8 +185,6 @@
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/SecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/login.jsp" />
         <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/signup.jsp" />
-        <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" />
-        <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp" />
         <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Log.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/UserClientController.java" />
         <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/logItems.jsp" />
@@ -228,17 +197,22 @@
         <option value="$PROJECT_DIR$/vo/src/main/java/vo/CityVO.java" />
         <option value="$PROJECT_DIR$/cityService/src/main/java/CityJPA/Entities/City.java" />
         <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/House.java" />
-        <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java" />
         <option value="$PROJECT_DIR$/cityService/src/main/java/CityJPA/Controllers/CityController.java" />
-        <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/HouseController.java" />
         <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/PersonController.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/error.jsp" />
-        <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java" />
         <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/vo/src/main/java/vo/PersonVO.java" />
+        <option value="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp" />
+        <option value="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java" />
+        <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/HouseController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java" />
+        <option value="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java" />
       </list>
     </option>
   </component>
@@ -265,10 +239,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="798" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -278,6 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -470,6 +445,16 @@
             <path>
               <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
               <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
+              <item name="ownerService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="OwnerJPA" type="462c0819:PsiDirectoryNode" />
+              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HouseOwners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HouseOwners" type="462c0819:PsiDirectoryNode" />
               <item name="UserService1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -579,7 +564,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -596,7 +580,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560281820071" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560281907234" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -842,7 +826,9 @@
       <workItem from="1559417435757" duration="4513000" />
       <workItem from="1560009830655" duration="2139000" />
       <workItem from="1560115308027" duration="17477000" />
-      <workItem from="1560193522145" duration="25535000" />
+      <workItem from="1560193522145" duration="25789000" />
+      <workItem from="1560282024424" duration="3339000" />
+      <workItem from="1560299214824" duration="6412000" />
     </task>
     <task id="LOCAL-00001" summary="added new VO classes">
       <created>1558118755530</created>
@@ -1047,11 +1033,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560236286552</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="improved authorization, fixed signup-&gt;login bug">
+      <created>1560281952320</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1560281952320</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341049000" />
+    <option name="totallyTimeSpent" value="351054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1063,10 +1056,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="798" extended-state="0" />
+    <frame x="-1" y="23" width="1440" height="798" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2932761" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29756796" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1089,7 +1082,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.47308782" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.47308782" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1185,7 +1178,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/config/application-config1" />
     </ignored-roots>
-    <MESSAGE value="updated HouseController" />
     <MESSAGE value="created controllers" />
     <MESSAGE value="cascade safe delete" />
     <MESSAGE value="cascade safe delete nw" />
@@ -1210,20 +1202,14 @@
     <MESSAGE value="region toString" />
     <MESSAGE value="region toString, toLog" />
     <MESSAGE value="cityClientService" />
-    <option name="LAST_COMMIT_MESSAGE" value="cityClientService" />
+    <MESSAGE value="improved authorization, fixed signup-&gt;login bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved authorization, fixed signup-&gt;login bug" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/CityRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/LogRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1234,13 +1220,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/RegionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/RegionRepository.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1269,16 +1249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10">
@@ -1286,13 +1256,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-267">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Role.java" />
     <entry file="file://$PROJECT_DIR$/client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -1307,37 +1271,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/item.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/RoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/RegionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="106" column="32" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/RoleRepository.java" />
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/RegionController.java" />
     <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1346,13 +1281,6 @@
             <element signature="e#679#680#0" expanded="true" />
             <element signature="e#705#706#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/items.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="59" lean-forward="true" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1370,34 +1298,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Region.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/CityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/Region.java" />
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/CityController.java" />
     <entry file="file://$PROJECT_DIR$/cityService/src/main/java/CityJPA/Controllers/RegionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1430,17 +1332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-          <folding>
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/HouseOwner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-353">
@@ -1452,13 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-24">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vo/src/main/java/vo/PersonVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-98">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1497,24 +1381,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/HouseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="100" column="62" selection-start-line="100" selection-start-column="62" selection-end-line="100" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/HouseOwnerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1345">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/PersonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1539,52 +1409,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java">
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="213" column="38" selection-start-line="213" selection-start-column="38" selection-end-line="213" selection-end-column="38" />
-          <folding>
-            <element signature="e#3894#3895#0" expanded="true" />
-            <element signature="e#3935#3936#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="43" column="64" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/UserClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1091">
-          <caret line="165" column="54" lean-forward="true" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+        <state relative-caret-position="125">
+          <caret line="54" column="69" lean-forward="true" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1593,31 +1421,136 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Entities/UserE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="600">
           <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
-          <folding>
-            <element signature="e#938#939#0" expanded="true" />
-            <element signature="e#969#970#0" expanded="true" />
-            <element signature="e#1541#1542#0" expanded="true" />
-            <element signature="e#1565#1566#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/items.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        <state relative-caret-position="-242">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Controllers/UserController.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/UserClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="54" column="69" lean-forward="true" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
+        <state relative-caret-position="292">
+          <caret line="165" column="54" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/SecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vo/src/main/java/vo/PersonVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="41" column="116" selection-start-line="41" selection-start-column="116" selection-end-line="41" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Repositories/HouseRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/PersonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Controllers/HouseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/item.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="148" column="43" lean-forward="true" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2130">
+          <caret line="144" column="22" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-548">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>

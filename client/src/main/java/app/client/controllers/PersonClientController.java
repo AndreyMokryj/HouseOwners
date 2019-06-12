@@ -1,5 +1,6 @@
 package app.client.controllers;
 
+import OwnerJPA.Entities.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -7,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 import rabbit.RabbitApp;
 import vo.CustomMessage;
 import vo.Exceptions.ItemNotFoundException;
 import vo.PersonVO;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 @RestController
 @RequestMapping(path="/people")
@@ -39,45 +40,71 @@ public class PersonClientController {
     }
 
     @GetMapping(path = "/")
-    public String getPeople()
-    {
-        String response = restTemplate3.exchange("http://owner-service/people/",
-                HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}).getBody();
-
-        System.out.println("Response Received as " + response);
-
-        return response;
+    public ModelAndView getPeople(){
+        List<Person> response = restTemplate3.exchange("http://owner-service/people/",
+                HttpMethod.GET, null, new ParameterizedTypeReference<List<Person>>() {}).getBody();
+        ModelAndView mav=new ModelAndView("items");
+        mav.addObject("items", response);
+        mav.addObject("type", "people");
+        ArrayList<String> list = new ArrayList<>();
+        list.add("name");
+        list.add("passport");
+        list.add("registered_at");
+        //list.add("email");
+        mav.addObject("list", list);
+        return mav;
     }
 
     @GetMapping("/{id}")
-    public String getById(@PathVariable long id)
+    public ModelAndView getById(@PathVariable long id)
     {
+        ModelAndView mav=new ModelAndView("item");
+
         try {
-            String response = restTemplate3.exchange("http://owner-service/people/{id}",
-                    HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, id).getBody();
+            Person response = restTemplate3.exchange("http://owner-service/people/{id}",
+                    HttpMethod.GET, null, new ParameterizedTypeReference<Person>() {}, id).getBody();
 
             System.out.println("Response Received as " + response);
+            mav.addObject("item",response);
+            mav.addObject("type", "people");
 
-            return response;
+            Map<String, String> map = new HashMap<>();
+            map.put("name", response.getName());
+            map.put("passport", response.getPassport());
+            map.put("registered_at", response.getRegistered_at().toString());
+            //map.put("email", customer.get().getEmail());
+            mav.addObject("map", map);
+
+            return mav;
         }
-        catch (org.springframework.web.client.HttpClientErrorException ex){
+        catch (HttpClientErrorException ex){
             throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
 
     }
 
     @PostMapping("/")
-    public void createPerson(@RequestBody PersonVO personVO)
-    {
+    public ModelAndView createPerson(@RequestParam(value = "name") String name,
+                                     @RequestParam(value = "passport") String passport,
+                                    @RequestParam(value = "registered_at") long registered_at) {
+        PersonVO personVO = new PersonVO();
+        personVO.setName(name);
+        personVO.setPassport(passport);
+        personVO.setRegistered_at(registered_at);
+
         String message = "Request to create person: " + personVO;
         sendMessage(message);
 
         Object response = restTemplate3.postForObject("http://owner-service/people/", personVO, Object.class);
         System.out.println("Response Received as " + response);
+
+        ModelAndView mav = getPeople();
+        mav.addObject("message","Person added successfully!");
+        return mav;
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void deletePerson(@PathVariable long id) {
+    @GetMapping("/delete/{id}")
+    public ModelAndView deletePerson(@PathVariable long id) {
         String message = "Request to delete person with id = " + id;
         sendMessage(message);
 
@@ -90,10 +117,21 @@ public class PersonClientController {
         catch (org.springframework.web.client.HttpClientErrorException ex){
             throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
+        ModelAndView mav = getPeople();
+        mav.addObject("message", "Person deleted successfully!");
+        return mav;
     }
 
-    @PutMapping("/{id}")
-    public void updatePerson(@RequestBody PersonVO personVO, @PathVariable long id) {
+    @PostMapping("/update/{id}")
+    public ModelAndView updateHouse(@RequestParam(value = "name") String name,
+                                    @RequestParam(value = "passport") String passport,
+                                    @RequestParam(value = "registered_at") long registered_at,
+                                    @PathVariable long id) {
+        PersonVO personVO = new PersonVO();
+        personVO.setName(name);
+        personVO.setPassport(passport);
+        personVO.setRegistered_at(registered_at);
+
         String message = "Request to update person with id = " + id+ ", body:" + personVO;
         sendMessage(message);
 
@@ -106,5 +144,9 @@ public class PersonClientController {
         catch (org.springframework.web.client.HttpClientErrorException ex){
             throw new ItemNotFoundException("Person with id=" + id + " doesn't exist");
         }
+
+        ModelAndView mav = getPeople();
+        mav.addObject("message", "Person updated successfully!");
+        return mav;
     }
 }
