@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d74798-5fce-479c-bd5d-dc2fd92a1c61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/UApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cityService/src/main/java/CityJPA/CApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/app/client/ClientApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/OApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService1/src/main/java/UserJPA/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/CityClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseOwnerClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/HouseOwnerClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/PersonClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/controllers/RegionClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/META-INF/resources/WEB-INF/views/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery/target/discovery-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/ownerService/src/main/java/OwnerJPA/Entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/app/client/Configuration/UserDetailsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,11 +286,6 @@
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -358,7 +339,7 @@
       <workItem from="1585406255609" duration="533000" />
       <workItem from="1585410212944" duration="10897000" />
       <workItem from="1585647272127" duration="329000" />
-      <workItem from="1585647678828" duration="1419000" />
+      <workItem from="1585647678828" duration="5135000" />
     </task>
     <task id="LOCAL-00001" summary="added new VO classes">
       <created>1558118755530</created>
@@ -648,41 +629,42 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="184" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.826@0.23.1440.826" timestamp="1585647574047" />
-    <state width="958" height="283" key="GridCell.Tab.0.bottom" timestamp="1585649188664">
+    <state width="958" height="283" key="GridCell.Tab.0.bottom" timestamp="1585649250711">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="958" height="283" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1585649188664" />
-    <state width="958" height="283" key="GridCell.Tab.0.center" timestamp="1585649188663">
+    <state width="958" height="283" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1585649250711" />
+    <state width="958" height="283" key="GridCell.Tab.0.center" timestamp="1585649250710">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="958" height="283" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1585649188663" />
-    <state width="958" height="283" key="GridCell.Tab.0.left" timestamp="1585649188663">
+    <state width="958" height="283" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1585649250710" />
+    <state width="958" height="283" key="GridCell.Tab.0.left" timestamp="1585649250710">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="958" height="283" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1585649188663" />
-    <state width="958" height="283" key="GridCell.Tab.0.right" timestamp="1585649188664">
+    <state width="958" height="283" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1585649250710" />
+    <state width="958" height="283" key="GridCell.Tab.0.right" timestamp="1585649250711">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="958" height="283" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1585649188664" />
-    <state width="958" height="283" key="GridCell.Tab.1.bottom" timestamp="1585649188665">
+    <state width="958" height="283" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1585649250711" />
+    <state width="958" height="283" key="GridCell.Tab.1.bottom" timestamp="1585649250712">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="958" height="283" key="GridCell.Tab.1.bottom/0.23.1440.826@0.23.1440.826" timestamp="1585649188665" />
-    <state width="958" height="283" key="GridCell.Tab.1.center" timestamp="1585649188665">
+    <state width="958" height="283" key="GridCell.Tab.1.bottom/0.23.1440.826@0.23.1440.826" timestamp="1585649250712" />
+    <state width="958" height="283" key="GridCell.Tab.1.center" timestamp="1585649250712">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="958" height="283" key="GridCell.Tab.1.center/0.23.1440.826@0.23.1440.826" timestamp="1585649188665" />
-    <state width="958" height="283" key="GridCell.Tab.1.left" timestamp="1585649188664">
+    <state width="958" height="283" key="GridCell.Tab.1.center/0.23.1440.826@0.23.1440.826" timestamp="1585649250712" />
+    <state width="958" height="283" key="GridCell.Tab.1.left" timestamp="1585649250712">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="958" height="283" key="GridCell.Tab.1.left/0.23.1440.826@0.23.1440.826" timestamp="1585649188664" />
-    <state width="958" height="283" key="GridCell.Tab.1.right" timestamp="1585649188665">
+    <state width="958" height="283" key="GridCell.Tab.1.left/0.23.1440.826@0.23.1440.826" timestamp="1585649250712" />
+    <state width="958" height="283" key="GridCell.Tab.1.right" timestamp="1585649250712">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="958" height="283" key="GridCell.Tab.1.right/0.23.1440.826@0.23.1440.826" timestamp="1585649188665" />
-    <state x="375" y="192" width="689" height="472" key="find.popup" timestamp="1585437819608">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="958" height="283" key="GridCell.Tab.1.right/0.23.1440.826@0.23.1440.826" timestamp="1585649250712" />
+    <state x="375" y="192" width="689" height="472" key="find.popup" timestamp="1585653038705">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
+    <state x="375" y="192" width="689" height="472" key="find.popup/0.23.1440.826@0.23.1440.826" timestamp="1585653038705" />
     <state x="375" y="192" width="689" height="472" key="find.popup/0.23.1440.827@0.23.1440.827" timestamp="1585437819608" />
   </component>
   <component name="antWorkspaceConfiguration">
