@@ -53,7 +53,7 @@ public class RegionClientController {
         return mav;
     }
 
-    @GetMapping("/{id}/details")
+    @GetMapping("/{id}")
     public ModelAndView getById(@PathVariable long id)
     {
         ModelAndView mav=new ModelAndView("item");

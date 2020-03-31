@@ -71,7 +71,7 @@ public class PersonClientController {
             Map<String, String> map = new HashMap<>();
             map.put("name", response.getName());
             map.put("passport", response.getPassport());
-            map.put("registered_at", response.getRegistered_at().toString());
+            //map.put("registered_at", response.getRegistered_at().toString());
             //map.put("email", customer.get().getEmail());
             mav.addObject("map", map);
 

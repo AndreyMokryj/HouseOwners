@@ -18,7 +18,7 @@ public class Person {
     private Long id;
     private String name;
     private String passport;
-    private Long registered_at;
+    //private Long registered_at;
 
     public Long getId() {
         return id;
@@ -44,24 +44,24 @@ public class Person {
         this.passport = passport;
     }
 
-    public Long getRegistered_at() {
-        return registered_at;
-    }
-
-    public void setRegistered_at(Long id) {
-        this.registered_at = id;
-    }
+//    public Long getRegistered_at() {
+//        return registered_at;
+//    }
+//
+//    public void setRegistered_at(Long id) {
+//        this.registered_at = id;
+//    }
 
     public static Person fromVO(PersonVO personVO){
         Person person = new Person();
         person.setName(personVO.getName());
         person.setPassport(personVO.getPassport());
-        person.setRegistered_at(personVO.getRegistered_at());
+        //person.setRegistered_at(personVO.getRegistered_at());
         return person;
     }
 
     public String toLog(){
-        String x  = "{id: " + getId() + ", name: " + getName() + ", passport: " + getPassport() + ", registered_at: " + getRegistered_at() + "}";
+        String x  = "{id: " + getId() + ", name: " + getName() + ", passport: " + getPassport() + "}";
         return x;
     }
 
